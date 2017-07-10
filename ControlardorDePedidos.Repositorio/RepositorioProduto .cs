@@ -18,6 +18,8 @@ namespace ControladorDePedidos.Repositorio
 
         public void Adicione(Produto produto )
         {
+            var MarcaOriginal = contexto.Set<Marca>().Find(produto.Marca.Codigo);
+            produto.Marca = MarcaOriginal;
             contexto.Set<Produto>().Add(produto);
             contexto.SaveChanges();
         }

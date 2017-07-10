@@ -31,6 +31,14 @@ namespace ControladorDePedidos.WPF
             this.DataContext = new Produto();
         }
 
+        public FormCadastroDeProduto(Produto produto)
+        {
+            repositorioMarca = new RepositorioMarca();
+            repositorioProduto = new RepositorioProduto();
+            InitializeComponent();
+            this.DataContext = produto;
+        }
+
         private void FormCadastroDeProduto_OnLoaded(object sender, RoutedEventArgs e)
         {
             var marcas = repositorioMarca.Liste();
