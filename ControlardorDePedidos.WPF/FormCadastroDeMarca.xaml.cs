@@ -17,7 +17,7 @@ using ControlardorDePedidos.Repositorio;
 namespace ControlardorDePedidos.WPF
 {
     /// <summary>
-    /// Lógica interna para FormCadastroDeMarca.xaml
+    /// Teste commit para FormCadastroDeMarca.xaml
     /// </summary>
     public partial class FormCadastroDeMarca : Window
     {
