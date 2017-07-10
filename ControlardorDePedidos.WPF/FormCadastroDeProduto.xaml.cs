@@ -11,31 +11,58 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using ControlardorDePedidos.Repositorio;
+using ControladorDePedidos.Model;
+using ControladorDePedidos.Repositorio;
 
-namespace ControlardorDePedidos.WPF
+namespace ControladorDePedidos.WPF
 {
     /// <summary>
     /// Lógica interna para FormCadastroDeProduto.xaml
     /// </summary>
     public partial class FormCadastroDeProduto : Window
     {
-        private RepositorioMarca repositorio;
+        private RepositorioMarca repositorioMarca;
+        private RepositorioProduto repositorioProduto;
         public FormCadastroDeProduto()
         {
-            repositorio = new RepositorioMarca();
+            repositorioMarca = new RepositorioMarca();
+            repositorioProduto = new RepositorioProduto();
             InitializeComponent();
+            this.DataContext = new Produto();
         }
 
         private void FormCadastroDeProduto_OnLoaded(object sender, RoutedEventArgs e)
         {
-            var marcas = repositorio.Liste();
+            var marcas = repositorioMarca.Liste();
             cmbMarcas.DataContext = marcas;
+           
+
         }
 
         private void btnSalvar_Click(object sender, RoutedEventArgs e)
         {
+            var produto = (Produto)this.DataContext;
+            if (cmbMarcas.SelectedItem == null)
+            {
+                MessageBox.Show("Selecione uma marca");
+            }
+            else
+            {
+                produto.Marca = (Marca) cmbMarcas.SelectedItem;
+            }
 
+            if (produto.Codigo == 0)
+            {
+                //cadastro
+                repositorioProduto.Adicione(produto);
+            }
+            else
+            {
+                //atualizacao
+                repositorioProduto.Atualize(produto);
+            }
+
+            this.Close();
         }
     }
 }

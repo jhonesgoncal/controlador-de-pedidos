@@ -12,9 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ControladorDePedidos.Model;
-using ControlardorDePedidos.Repositorio;
+using ControladorDePedidos.Repositorio;
 
-namespace ControlardorDePedidos.WPF
+namespace ControladorDePedidos.WPF
 {
     
     public partial class FormMarcas : Window

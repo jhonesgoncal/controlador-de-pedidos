@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ControladorDePedidos.Model;
 
-namespace ControlardorDePedidos.Repositorio
+namespace ControladorDePedidos.Repositorio
 {
     public class RepositorioMarca
     {

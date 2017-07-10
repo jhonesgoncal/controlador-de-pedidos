@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ControlardorDePedidos.WPF
+namespace ControladorDePedidos.WPF
 {
     /// <summary>
     /// Lógica interna para FormProdutos.xaml

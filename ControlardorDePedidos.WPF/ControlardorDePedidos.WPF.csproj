@@ -140,9 +140,9 @@
       <Project>{ed1c8eb9-c2d8-44bc-9e1d-a319c2b43d39}</Project>
       <Name>ControladorDePedidos.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ControlardorDePedidos.Repositorio\ControlardorDePedidos.Repositorio.csproj">
+    <ProjectReference Include="..\ControlardorDePedidos.Repositorio\ControladorDePedidos.Repositorio.csproj">
       <Project>{bfde6671-5be3-4e55-90e7-8fca1c8a13d7}</Project>
-      <Name>ControlardorDePedidos.Repositorio</Name>
+      <Name>ControladorDePedidos.Repositorio</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
