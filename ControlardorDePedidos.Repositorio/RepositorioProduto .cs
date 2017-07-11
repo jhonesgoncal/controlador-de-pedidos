@@ -34,8 +34,8 @@ namespace ControladorDePedidos.Repositorio
         public List<Produto> Liste()
         {
             contexto = new Contexto();
-            var listado = contexto.Set<Produto>().ToList();
-            return listado;
+            var lista = contexto.Set<Produto>().ToList();
+            return lista;
         }
 
         public void Excluir(Produto produto)
