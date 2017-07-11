@@ -12,7 +12,7 @@ namespace ControladorDePedidos.Model
         [Key]
         public int Codigo { get; set; }
         public string Nome { get; set; }
-        public Marca Marca { get; set; }
+        public virtual Marca Marca { get; set; }
         public decimal ValorDeCompra { get; set; }
         public decimal ValorDeVenda { get; set; }
         public int QuantidadeEmEstoque { get; set; }

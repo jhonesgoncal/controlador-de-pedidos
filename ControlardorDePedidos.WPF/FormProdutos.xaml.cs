@@ -65,6 +65,18 @@ namespace ControladorDePedidos.WPF
             CarregueElementosDoBancoDeDados();
         }
 
-       
+        private void btnExcluir_Click(object sender, RoutedEventArgs e)
+        {
+            if (lstProdutos.SelectedItem == null)
+            {
+                MessageBox.Show("Selecione um item");
+                return;
+            }
+
+            var itemSelecionado = (Produto)lstProdutos.SelectedItem;
+            repositorio.Excluir(itemSelecionado);
+            CarregueElementosDoBancoDeDados();
+
+        }
     }
 }
