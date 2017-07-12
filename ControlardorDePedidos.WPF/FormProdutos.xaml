@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ControladorDePedidos.WPF"
         mc:Ignorable="d"
-        Title="Produtos" Height="613.662" Width="731.301" WindowStartupLocation="CenterScreen"
+        Title="Produtos" Height="613.662" Width="750.801" WindowStartupLocation="CenterScreen"
         Loaded="FormProdutos_OnLoaded">
     <Window.Resources>
         <ResourceDictionary Source="/dn32Layout;component/Themes/dn32ImageButton.xaml"></ResourceDictionary>

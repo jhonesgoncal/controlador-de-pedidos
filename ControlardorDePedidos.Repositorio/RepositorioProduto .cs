@@ -26,7 +26,9 @@ namespace ControladorDePedidos.Repositorio
 
         public void Atualize(Produto produto)
         {
+            var MarcaOriginal = contexto.Set<Marca>().Find(produto.Marca.Codigo);
             var original = contexto.Set<Produto>().Find(produto.Codigo);
+            original.Marca = MarcaOriginal;
             contexto.Entry(original).CurrentValues.SetValues(produto);
             contexto.SaveChanges();
         }

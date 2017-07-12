@@ -37,6 +37,7 @@ namespace ControladorDePedidos.WPF
             repositorioProduto = new RepositorioProduto();
             InitializeComponent();
             this.DataContext = produto;
+            cmbMarcas.SelectedValue = produto.Marca.Codigo;
         }
 
         private void FormCadastroDeProduto_OnLoaded(object sender, RoutedEventArgs e)

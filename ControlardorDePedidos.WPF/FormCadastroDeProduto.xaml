@@ -39,6 +39,6 @@
         <TextBox x:Name="txtValorVenda" Text="{Binding ValorDeVenda}" HorizontalAlignment="Left" Height="23" Margin="154,126,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="203"/>
         <TextBox x:Name="txtEstoqueMinimo" Text="{Binding QuantidadeMinimaEmEstoque}" HorizontalAlignment="Left" Height="23" Margin="154,210,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="203"/>
         <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,216,0,0" TextWrapping="Wrap" Text="Estoque Minimo: " VerticalAlignment="Top"/>
-        <ComboBox Name="cmbMarcas" HorizontalAlignment="Left" Margin="154,71,0,0" VerticalAlignment="Top" Width="203" ItemsSource="{Binding}" DisplayMemberPath="Nome"/>
+        <ComboBox Name="cmbMarcas" HorizontalAlignment="Left" Margin="154,71,0,0" VerticalAlignment="Top" Width="203" ItemsSource="{Binding}" SelectedValuePath="Codigo" DisplayMemberPath="Nome"/>
     </Grid>
 </Window>
