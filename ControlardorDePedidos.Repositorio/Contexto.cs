@@ -13,6 +13,7 @@ namespace ControladorDePedidos.Repositorio
         public Contexto() : base("DefaultConnection") {  }
         public DbSet<Marca> Marca { get; set; }
         public DbSet<Produto> Produto { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
     }
    
 }
