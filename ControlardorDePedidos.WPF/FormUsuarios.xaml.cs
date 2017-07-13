@@ -1,6 +1,4 @@
-﻿using ControladorDePedidos.Model;
-using ControladorDePedidos.Repositorio;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ControladorDePedidos.Model;
+using ControladorDePedidos.Repositorio;
 
 namespace ControladorDePedidos.WPF
 {
@@ -83,9 +83,8 @@ namespace ControladorDePedidos.WPF
             CarregueElementosDoBancoDeDados();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
+        
 
-        }
+       
     }
 }

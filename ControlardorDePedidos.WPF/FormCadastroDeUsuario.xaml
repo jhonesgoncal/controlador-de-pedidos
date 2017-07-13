@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ControladorDePedidos.WPF"
         xmlns:controls="clr-namespace:dn32ImageButton.Controls;assembly=dn32Layout"
         mc:Ignorable="d"
-        Title="Cadastro de Usuario" Height="194" Width="292"
+        Title="Cadastro de Usuario" Height="355.5" Width="292"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
     <Window.Resources>
@@ -15,17 +15,29 @@
     <Grid>
         <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,19,0,0" TextWrapping="Wrap" Text="Codigo: " VerticalAlignment="Top"/>
         <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,57,0,0" TextWrapping="Wrap" Text="Nome: " VerticalAlignment="Top"/>
-        <TextBox Name="txtCodigo" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="69,12,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
-        <TextBox Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="69,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
+        <TextBox Name="txtCodigo" Text="{Binding Codigo}"  IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="69,12,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="203"/>
+        <TextBox Name="txtNome" Text="{Binding Nome}" HorizontalAlignment="Left" Height="23" Margin="69,50,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="203"/>
         <controls:dn32ImageButton x:Name="btnSalvar"
             Style="{DynamicResource dn32ButtonStyle}" 
             Text="Salvar"
             NormalImage="/dn32Layout;component/img/salvar.png"
-            HorizontalAlignment="Left" VerticalAlignment="Top" Height="62" Width="66" 
+            HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="62" Width="66" 
             ImageSize="32"
             Padding="3"
             FontSize="12"
-            Margin="206,92,0,0" RenderTransformOrigin="0.53,0.468" Click="btnSalvar_Click" 
+            Margin="0,0,14,11" RenderTransformOrigin="0.53,0.468" Click="btnSalvar_Click" 
         />
+        <GroupBox Header="Permissoes" HorizontalAlignment="Left" Height="149" Margin="69,88,0,0" VerticalAlignment="Top" Width="203">
+            <Grid>
+                <CheckBox IsChecked="{Binding Administrador}"  Content="Administrador" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top"/>
+                <CheckBox IsChecked="{Binding Clientes}" Content="Clientes" HorizontalAlignment="Left" Margin="10,22,0,0" VerticalAlignment="Top"/>
+                <CheckBox IsChecked="{Binding Produtos}" Content="Produtos" HorizontalAlignment="Left" Margin="10,42,0,0" VerticalAlignment="Top"/>
+                <CheckBox IsChecked="{Binding Vendas}" Content="Vendas" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top"/>
+                <CheckBox IsChecked="{Binding Fornecedores}" Content="Fornecedores" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top"/>
+                <CheckBox IsChecked="{Binding Compras}" Content="Compras" HorizontalAlignment="Left" Margin="10,102,0,0" VerticalAlignment="Top"/>
+
+            </Grid>
+
+        </GroupBox>
     </Grid>
 </Window>

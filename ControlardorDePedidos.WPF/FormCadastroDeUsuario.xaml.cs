@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ControladorDePedidos.Model;
+using ControladorDePedidos.Repositorio;
 
 namespace ControladorDePedidos.WPF
 {
@@ -22,6 +24,31 @@ namespace ControladorDePedidos.WPF
         public FormCadastroDeUsuario()
         {
             InitializeComponent();
+            this.DataContext = new Usuario();
+        }
+
+        public FormCadastroDeUsuario(Usuario usuario)
+        {
+            InitializeComponent();
+            this.DataContext = usuario;
+        }
+
+        private void btnSalvar_Click(object sender, RoutedEventArgs e)
+        {
+            var usuario = (Usuario)this.DataContext;
+            var repositorio = new RepositorioUsuario();
+            if (usuario.Codigo == 0)
+            {
+                //Novo Cadastro
+                repositorio.Adicione(usuario);
+            }
+            else
+            {
+                //Editando Cadastro
+                repositorio.Atualize(usuario);
+            }
+
+            this.Close();
         }
     }
 }
