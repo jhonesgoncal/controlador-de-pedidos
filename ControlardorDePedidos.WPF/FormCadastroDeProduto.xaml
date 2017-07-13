@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ControladorDePedidos.WPF"
         xmlns:controls="clr-namespace:dn32ImageButton.Controls;assembly=dn32Layout"
         mc:Ignorable="d"
-        Title="Cadastro de Produto" Height="352.47" Width="379.214"
+        Title="Cadastro de Produto" Height="352.47" Width="385.214"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         Loaded="FormCadastroDeProduto_OnLoaded">

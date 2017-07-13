@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ControladorDePedidos.WPF;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,6 +35,12 @@ namespace ControladorDePedidos.WPF
         private void btnUsuarios_Click(object sender, RoutedEventArgs e)
         {
             var janelaUsuarios = new FormUsuarios();
+            janelaUsuarios.Show();
+        }
+
+        private void btnClientes_Click(object sender, RoutedEventArgs e)
+        {
+            var janelaUsuarios = new FormClientes();
             janelaUsuarios.Show();
         }
     }
