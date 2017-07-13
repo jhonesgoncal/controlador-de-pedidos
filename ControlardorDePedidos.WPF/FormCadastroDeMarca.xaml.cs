@@ -11,10 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using ControlardorDePedidos.Model;
-using ControlardorDePedidos.Repositorio;
+using ControladorDePedidos.Model;
+using ControladorDePedidos.Repositorio;
 
-namespace ControlardorDePedidos.WPF
+namespace ControladorDePedidos.WPF
 {
     /// <summary>
     /// Teste commit para FormCadastroDeMarca.xaml

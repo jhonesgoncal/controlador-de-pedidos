@@ -1,13 +1,13 @@
 ﻿<Window xmlns:Controls="clr-namespace:dn32ImageButton.Controls;assembly=dn32Layout" 
-        x:Class="ControlardorDePedidos.WPF.FormUsuarios"
+        x:Class="ControladorDePedidos.WPF.FormUsuarios"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ControlardorDePedidos.WPF"
+        xmlns:local="clr-namespace:ControladorDePedidos.WPF"
         Loaded="FormUsuarios_OnLoaded"
         mc:Ignorable="d"
-        Title="Usuarios" Height="614.662" Width="630.801" WindowStartupLocation="CenterScreen">
+        Title="Usuarios" Height="614.662" Width="1155.576" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <ResourceDictionary Source="/dn32Layout;component/Themes/dn32ImageButton.xaml"></ResourceDictionary>
     </Window.Resources>
@@ -53,7 +53,14 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Codigo" Width="150" DisplayMemberBinding="{Binding Codigo}"/>
-                    <GridViewColumn Header="Nome" Width="434" DisplayMemberBinding="{Binding Nome}"/>
+                    <GridViewColumn Header="Nome" Width="334" DisplayMemberBinding="{Binding Nome}"/>
+                    <GridViewColumn Header="Administrador" Width="100" DisplayMemberBinding="{Binding Administrador}"/>
+                    <GridViewColumn Header="Clientes" Width="100" DisplayMemberBinding="{Binding Clientes}"/>
+                    <GridViewColumn Header="Produtos" Width="100" DisplayMemberBinding="{Binding Produtos}"/>
+                    <GridViewColumn Header="Compras" Width="100" DisplayMemberBinding="{Binding Compras}"/>
+                    <GridViewColumn Header="Vendas" Width="100" DisplayMemberBinding="{Binding Vendas}"/>
+                    <GridViewColumn Header="Fornecedores" Width="100" DisplayMemberBinding="{Binding Fornecedores}"/>
+
                 </GridView>
             </ListView.View>
         </ListView>

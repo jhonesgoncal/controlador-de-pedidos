@@ -4,9 +4,9 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ControlardorDePedidos.Model;
+using ControladorDePedidos.Model;
 
-namespace ControlardorDePedidos.Repositorio
+namespace ControladorDePedidos.Repositorio
 {
     public class Contexto : DbContext
     {
