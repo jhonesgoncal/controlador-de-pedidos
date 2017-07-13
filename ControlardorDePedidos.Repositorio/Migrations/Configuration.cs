@@ -1,4 +1,4 @@
-namespace ControlardorDePedidos.Repositorio.Migrations
+namespace ControladorDePedidos.Repositorio.Migrations
 {
     using System;
     using System.Data.Entity;
