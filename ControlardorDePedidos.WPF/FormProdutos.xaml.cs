@@ -11,10 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using ControladorDePedidos.Model;
-using ControladorDePedidos.Repositorio;
+using ControlardorDePedidos.Model;
+using ControlardorDePedidos.Repositorio;
 
-namespace ControladorDePedidos.WPF
+namespace ControlardorDePedidos.WPF
 {
     /// <summary>
     /// Lógica interna para FormProdutos.xaml

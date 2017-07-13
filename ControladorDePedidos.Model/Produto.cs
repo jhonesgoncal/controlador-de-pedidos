@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ControladorDePedidos.Model
+namespace ControlardorDePedidos.Model
 {
     public class Produto
     {

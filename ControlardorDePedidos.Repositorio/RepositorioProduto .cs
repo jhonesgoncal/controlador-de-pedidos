@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ControladorDePedidos.Model;
+using ControlardorDePedidos.Model;
 
-namespace ControladorDePedidos.Repositorio
+namespace ControlardorDePedidos.Repositorio
 {
     public class RepositorioProduto
     {

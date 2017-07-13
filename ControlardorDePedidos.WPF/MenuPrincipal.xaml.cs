@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ControladorDePedidos.WPF
+namespace ControlardorDePedidos.WPF
 {
     /// <summary>
     /// Interação lógica para MainWindow.xam

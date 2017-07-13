@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ControladorDePedidos.WPF.Properties
+namespace ControlardorDePedidos.WPF.Properties
 {
 
 
