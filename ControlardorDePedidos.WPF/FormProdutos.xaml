@@ -20,7 +20,7 @@
             ImageSize="32"
             Padding="3"
             FontSize="12"
-            Margin="10,5,0,0" Click="btnNovo_Click"
+            Margin="10,5,0,0" Click=""
         />
         <Controls:dn32ImageButton x:Name="btnEditar"
             Style="{DynamicResource dn32ButtonStyle}" 

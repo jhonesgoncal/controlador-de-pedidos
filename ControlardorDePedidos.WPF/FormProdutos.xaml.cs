@@ -78,5 +78,10 @@ namespace ControladorDePedidos.WPF
             CarregueElementosDoBancoDeDados();
 
         }
+
+        private void btnNovo_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

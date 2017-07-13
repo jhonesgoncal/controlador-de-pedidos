@@ -20,7 +20,7 @@
             ImageSize="32"
             Padding="3"
             FontSize="12"
-            Margin="10,5,0,0" Click=""
+            Margin="10,5,0,0" Click="btnNovo_Click"
         />
         <Controls:dn32ImageButton x:Name="btnEditar"
             Style="{DynamicResource dn32ButtonStyle}" 
@@ -29,7 +29,7 @@
             HorizontalAlignment="Left" VerticalAlignment="Top"  Height="62" Width="66" 
             ImageSize="32"
             Padding="3"
-            FontSize="12" Margin="81,5,0,0" Click=""
+            FontSize="12" Margin="81,5,0,0" Click="btnEditar_Click"
         />
         <Controls:dn32ImageButton x:Name="btnExcluir"
             Style="{DynamicResource dn32ButtonStyle}" 
@@ -38,7 +38,7 @@
             HorizontalAlignment="Left" VerticalAlignment="Top" Height="62" Width="66" 
             ImageSize="32"
             Padding="3"
-            FontSize="12" Margin="152,5,0,0" Click=""
+            FontSize="12" Margin="152,5,0,0" Click="btnExcluir_Click"
         />
         <Controls:dn32ImageButton x:Name="btnAtualizar"
             Style="{DynamicResource dn32ButtonStyle}" 
@@ -47,7 +47,7 @@
             HorizontalAlignment="Left" VerticalAlignment="Top" Height="62" Width="66" 
             ImageSize="32"
             Padding="3"
-            FontSize="12" Margin="223,5,0,0" Click=""
+            FontSize="12" Margin="223,5,0,0" Click="btnAtualizar_Click"
         />
         <ListView Name="lstUsuarios" SelectionMode="Single" ItemsSource="{Binding}" Margin="10,86,10,10">
             <ListView.View>
