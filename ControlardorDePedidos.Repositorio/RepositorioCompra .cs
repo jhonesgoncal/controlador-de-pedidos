@@ -18,17 +18,17 @@ namespace ControladorDePedidos.Repositorio
 
         public void Adicione(Compra compra )
         {
-            var MarcaOriginal = contexto.Set<Marca>().Find(compra.Marca.Codigo);
-            compra.Marca = MarcaOriginal;
+            var CompraOriginal = contexto.Set<Compra>().Find(compra.Codigo);
+            compra = CompraOriginal;
             contexto.Set<Compra>().Add(compra);
             contexto.SaveChanges();
         }
 
         public void Atualize(Compra compra)
         {
-            var MarcaOriginal = contexto.Set<Marca>().Find(compra.Marca.Codigo);
+            var CompraOriginal = contexto.Set<Compra>().Find(compra.Codigo);
             var original = contexto.Set<Compra>().Find(compra.Codigo);
-            original.Marca = MarcaOriginal;
+            original = CompraOriginal;
             contexto.Entry(original).CurrentValues.SetValues(compra);
             contexto.SaveChanges();
         }

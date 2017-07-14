@@ -50,5 +50,36 @@ namespace ControladorDePedidos.WPF
 
             this.Close();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnObterRecomendacao_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnAdicionar_Click(object sender, RoutedEventArgs e)
+        {
+            var formulario = new FormBuscaDeProduto();
+            formulario.ShowDialog();
+        }
+
+        private void btnEditar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnExcluir_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnExcluir_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

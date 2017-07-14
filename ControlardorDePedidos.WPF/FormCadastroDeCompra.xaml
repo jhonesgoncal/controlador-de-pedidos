@@ -6,18 +6,18 @@
         xmlns:local="clr-namespace:ControladorDePedidos.WPF"
         xmlns:controls="clr-namespace:dn32ImageButton.Controls;assembly=dn32Layout"
         mc:Ignorable="d"
-        Title="Cadastro de Compra" Height="352.47" Width="385.214"
+        Title="Cadastro de Compra" Height="352.47" Width="833.214"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Loaded="FormCadastroDeCompra_OnLoaded">
+        Loaded="Window_Loaded">
     <Window.Resources>
-        <ResourceDictionary Source="/dn32Layout;component/Themes/dn32ImageButton.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="/dn32Layout;component/Themes/dn32ImageButton.xaml">
+
+        </ResourceDictionary>
     </Window.Resources>
     <Grid>
-        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,18,0,0" TextWrapping="Wrap" Text="Codigo: " VerticalAlignment="Top"/>
-        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,49,0,0" TextWrapping="Wrap" Text="Nome: " VerticalAlignment="Top"/>
-        <TextBox Name="txtCodigo" Text="{Binding Codigo}" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="154,15,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="98"/>
-        <TextBox Name="txtNome" Text="{Binding Nome}" HorizontalAlignment="Left" Height="23" Margin="154,43,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="203"/>
+        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="14,52,0,0" TextWrapping="Wrap" Text="Codigo: " VerticalAlignment="Top"/>
+        <TextBox Name="txtCodigo" Text="{Binding Codigo}" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="73,44,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="77"/>
         <controls:dn32ImageButton x:Name="btnSalvar"
             Style="{DynamicResource dn32ButtonStyle}" 
             Text="Salvar"
@@ -26,19 +26,58 @@
             ImageSize="32"
             Padding="3"
             FontSize="12"
-            Margin="291,238,0,0" RenderTransformOrigin="0.53,0.468" Click="btnSalvar_Click" 
+            Margin="751,240,0,0" RenderTransformOrigin="0.53,0.468" Click="btnSalvar_Click" 
         />
-        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,76,0,0" TextWrapping="Wrap" Text="Marca: " VerticalAlignment="Top"/>
-        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,104,0,0" TextWrapping="Wrap" Text="Valor de Compra: " VerticalAlignment="Top"/>
-        <TextBox x:Name="txtValorCompra" Text="{Binding ValorDeCompra}" HorizontalAlignment="Left" Height="23" Margin="154,98,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="203"/>
-        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,132,0,0" TextWrapping="Wrap" Text="Valor da Venda: " VerticalAlignment="Top"/>
-        <TextBox x:Name="txtQuantidadeDesejavel" Text="{Binding QuantidadeDesejavelEmEstoque}"  HorizontalAlignment="Left" Height="23" Margin="154,182,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="203"/>
-        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,160,0,0" TextWrapping="Wrap" Text="Quantidade em Estoque: " VerticalAlignment="Top"/>
-        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,188,0,0" TextWrapping="Wrap" Text="Estoque Desejavel: " VerticalAlignment="Top" RenderTransformOrigin="0.495,-1.5"/>
-        <TextBox x:Name="txtQuantidadeEstoque"  Text="{Binding QuantidadeEmEstoque}" HorizontalAlignment="Left" Height="23" Margin="154,154,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="203"/>
-        <TextBox x:Name="txtValorVenda" Text="{Binding ValorDeVenda}" HorizontalAlignment="Left" Height="23" Margin="154,126,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="203"/>
-        <TextBox x:Name="txtEstoqueMinimo" Text="{Binding QuantidadeMinimaEmEstoque}" HorizontalAlignment="Left" Height="23" Margin="154,210,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="203"/>
-        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,216,0,0" TextWrapping="Wrap" Text="Estoque Minimo: " VerticalAlignment="Top"/>
-        <ComboBox Name="cmbMarcas" HorizontalAlignment="Left" Margin="154,71,0,0" VerticalAlignment="Top" Width="203" ItemsSource="{Binding}" SelectedValuePath="Codigo" DisplayMemberPath="Nome"/>
+        <ListView x:Name="lstProdutos" SelectionMode="Single" ItemsSource="{Binding}" Margin="10,82,10,100" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Codigo" Width="50" DisplayMemberBinding="{Binding Codigo}"/>
+                    <GridViewColumn Header="Nome" Width="250" DisplayMemberBinding="{Binding Nome}"/>
+                    <GridViewColumn Header="Marca" Width="70" DisplayMemberBinding="{Binding Marca.Nome}"/>
+                    <GridViewColumn Header="Valor" Width="110" DisplayMemberBinding="{Binding ValorDeCompra}"/>
+                    <GridViewColumn Header="Quantidade" Width="110" DisplayMemberBinding="{Binding ValorDeVenda}"/>
+                    <GridViewColumn Header="Quantidade Final em Estoque" Width="170" DisplayMemberBinding="{Binding ValorDeVenda}"/>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <controls:dn32ImageButton x:Name="btnObterRecomendacao"
+            Style="{DynamicResource dn32ButtonStyle}" 
+            Text="Obter Recomendação"
+            NormalImage="/dn32Layout;component/img/atualizar.png"
+            HorizontalAlignment="Left" VerticalAlignment="Top" Height="67" Width="134" 
+            ImageSize="32"
+            Padding="3"
+            FontSize="12" Margin="223,10,0,0"
+            Click="btnObterRecomendacao_Click"
+        />
+        <controls:dn32ImageButton x:Name="btnAdicionar"
+            Style="{DynamicResource dn32ButtonStyle}" 
+            Text="Adicionar"
+            NormalImage="/ControladorDePedidos.WPF;component/img/adicionar.png"
+            HorizontalAlignment="Left" VerticalAlignment="Top" Height="67" Width="103" 
+            ImageSize="32"
+            Padding="3"
+            FontSize="12" Margin="362,10,0,0"
+            Click="btnAdicionar_Click"
+        />
+        <controls:dn32ImageButton x:Name="btnEditar"
+            Style="{DynamicResource dn32ButtonStyle}" 
+            Text="Editar"
+            NormalImage="/dn32Layout;component/img/editar.png"
+            HorizontalAlignment="Left" VerticalAlignment="Top"  Height="67" Width="95" 
+            ImageSize="32"
+            Padding="3"
+            FontSize="12" Margin="470,10,0,0" Click="btnEditar_Click"
+        />
+        <controls:dn32ImageButton x:Name="btnExcluir"
+            Style="{DynamicResource dn32ButtonStyle}" 
+            Text="Excluir"
+            NormalImage="/dn32Layout;component/img/excluir.png"
+            HorizontalAlignment="Left" VerticalAlignment="Top" Height="67" Width="97" 
+            ImageSize="32"
+            Padding="3"
+            FontSize="12" Margin="570,10,0,0" Click="btnExcluir_Click_1" RenderTransformOrigin="1.47,0.661"
+        />
     </Grid>
 </Window>

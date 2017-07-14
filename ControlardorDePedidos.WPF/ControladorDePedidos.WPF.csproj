@@ -7,7 +7,7 @@
     <ProjectGuid>{9FDB11B5-6C58-4FCC-95FF-EDED2B43CC88}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>ControlardorDePedidos.WPF</RootNamespace>
-    <AssemblyName>ControlardorDePedidos.WPF</AssemblyName>
+    <AssemblyName>ControladorDePedidos.WPF</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -64,6 +64,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="FormBuscaDeProduto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FormCadastroDeCliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -111,6 +115,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FormBuscaDeProduto.xaml.cs">
+      <DependentUpon>FormBuscaDeProduto.xaml</DependentUpon>
     </Compile>
     <Compile Include="FormCadastroDeCliente.xaml.cs">
       <DependentUpon>FormCadastroDeCliente.xaml</DependentUpon>
@@ -186,6 +193,9 @@
       <Project>{bfde6671-5be3-4e55-90e7-8fca1c8a13d7}</Project>
       <Name>ControladorDePedidos.Repositorio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="img\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
