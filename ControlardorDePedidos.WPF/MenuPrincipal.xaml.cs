@@ -40,8 +40,14 @@ namespace ControladorDePedidos.WPF
 
         private void btnClientes_Click(object sender, RoutedEventArgs e)
         {
-            var janelaUsuarios = new FormClientes();
-            janelaUsuarios.Show();
+            var janelaClientes = new FormClientes();
+            janelaClientes.Show();
+        }
+
+        private void btnCompras_Click(object sender, RoutedEventArgs e)
+        {
+            var janelaCompras = new FormCompras();
+            janelaCompras.Show();
         }
     }
 }
