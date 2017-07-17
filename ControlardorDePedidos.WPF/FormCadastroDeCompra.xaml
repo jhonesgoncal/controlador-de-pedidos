@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ControladorDePedidos.WPF"
         xmlns:controls="clr-namespace:dn32ImageButton.Controls;assembly=dn32Layout"
         mc:Ignorable="d"
-        Title="Cadastro de Compra" Height="352.47" Width="833.214"
+        Title="Cadastro de Compra" Height="472.47" Width="843.214"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         Loaded="Window_Loaded">
@@ -21,14 +21,13 @@
         <controls:dn32ImageButton x:Name="btnSalvar"
             Style="{DynamicResource dn32ButtonStyle}" 
             Text="Salvar"
-            NormalImage="/dn32Layout;component/img/salvar.png"
-            HorizontalAlignment="Left" VerticalAlignment="Top" Height="62" Width="66" 
+            NormalImage="/dn32Layout;component/img/salvar.png" 
             ImageSize="32"
             Padding="3"
             FontSize="12"
-            Margin="751,240,0,0" RenderTransformOrigin="0.53,0.468" Click="btnSalvar_Click" 
+            Margin="751,0,20,16" RenderTransformOrigin="0.53,0.468" Click="btnSalvar_Click" Height="62" VerticalAlignment="Bottom" 
         />
-        <ListView x:Name="lstProdutos" SelectionMode="Single" ItemsSource="{Binding}" Margin="10,82,10,100" >
+        <ListView x:Name="lstProdutos" SelectionMode="Single" ItemsSource="{Binding}" Margin="10,82,20,100" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Codigo" Width="50" DisplayMemberBinding="{Binding Codigo}"/>
@@ -78,6 +77,15 @@
             ImageSize="32"
             Padding="3"
             FontSize="12" Margin="570,10,0,0" Click="btnExcluir_Click_1" RenderTransformOrigin="1.47,0.661"
+        />
+        <controls:dn32ImageButton x:Name="btnComprar"
+            Style="{DynamicResource dn32ButtonStyle}" 
+            Text="Comprar"
+            NormalImage="/dn32Layout;component/img/compras.png"
+            HorizontalAlignment="Left" VerticalAlignment="Top" Height="67" Width="97" 
+            ImageSize="32"
+            Padding="3"
+            FontSize="12" Margin="672,10,0,0" Click="btnComprar_Click" RenderTransformOrigin="1.47,0.661"
         />
     </Grid>
 </Window>
