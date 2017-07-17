@@ -83,5 +83,15 @@ namespace ControladorDePedidos.WPF
         {
 
         }
+
+        private void btnCompraRecebida_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnComprar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

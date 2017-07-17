@@ -6,9 +6,8 @@
         xmlns:local="clr-namespace:ControladorDePedidos.WPF"
         xmlns:controls="clr-namespace:dn32ImageButton.Controls;assembly=dn32Layout"
         mc:Ignorable="d"
-        Title="Cadastro de Compra" Height="472.47" Width="843.214"
+        Title="Cadastro de Compra" Height="472.47" Width="983.464"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize"
         Loaded="Window_Loaded">
     <Window.Resources>
         <ResourceDictionary Source="/dn32Layout;component/Themes/dn32ImageButton.xaml">
@@ -25,9 +24,9 @@
             ImageSize="32"
             Padding="3"
             FontSize="12"
-            Margin="751,0,20,16" RenderTransformOrigin="0.53,0.468" Click="btnSalvar_Click" Height="62" VerticalAlignment="Bottom" 
+            Margin="0,0,18,19"  RenderTransformOrigin="0.53,0.468" Click="btnSalvar_Click" Height="63" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="72" 
         />
-        <ListView x:Name="lstProdutos" SelectionMode="Single" ItemsSource="{Binding}" Margin="10,82,20,100" >
+        <ListView x:Name="lstProdutos" SelectionMode="Single" ItemsSource="{Binding}" Margin="10,82,16,100" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Codigo" Width="50" DisplayMemberBinding="{Binding Codigo}"/>
@@ -42,9 +41,9 @@
         </ListView>
         <controls:dn32ImageButton x:Name="btnObterRecomendacao"
             Style="{DynamicResource dn32ButtonStyle}" 
-            Text="Obter Recomendação"
+            Text="Recomendação"
             NormalImage="/dn32Layout;component/img/atualizar.png"
-            HorizontalAlignment="Left" VerticalAlignment="Top" Height="67" Width="134" 
+            HorizontalAlignment="Left" VerticalAlignment="Top" Height="67" Width="99" 
             ImageSize="32"
             Padding="3"
             FontSize="12" Margin="223,10,0,0"
@@ -57,7 +56,7 @@
             HorizontalAlignment="Left" VerticalAlignment="Top" Height="67" Width="103" 
             ImageSize="32"
             Padding="3"
-            FontSize="12" Margin="362,10,0,0"
+            FontSize="12" Margin="327,10,0,0"
             Click="btnAdicionar_Click"
         />
         <controls:dn32ImageButton x:Name="btnEditar"
@@ -67,7 +66,7 @@
             HorizontalAlignment="Left" VerticalAlignment="Top"  Height="67" Width="95" 
             ImageSize="32"
             Padding="3"
-            FontSize="12" Margin="470,10,0,0" Click="btnEditar_Click"
+            FontSize="12" Margin="435,10,0,0" Click="btnEditar_Click"
         />
         <controls:dn32ImageButton x:Name="btnExcluir"
             Style="{DynamicResource dn32ButtonStyle}" 
@@ -76,16 +75,7 @@
             HorizontalAlignment="Left" VerticalAlignment="Top" Height="67" Width="97" 
             ImageSize="32"
             Padding="3"
-            FontSize="12" Margin="570,10,0,0" Click="btnExcluir_Click_1" RenderTransformOrigin="1.47,0.661"
-        />
-        <controls:dn32ImageButton x:Name="btnComprar"
-            Style="{DynamicResource dn32ButtonStyle}" 
-            Text="Comprar"
-            NormalImage="/dn32Layout;component/img/compras.png"
-            HorizontalAlignment="Left" VerticalAlignment="Top" Height="67" Width="97" 
-            ImageSize="32"
-            Padding="3"
-            FontSize="12" Margin="672,10,0,0" Click="btnComprar_Click" RenderTransformOrigin="1.47,0.661"
+            FontSize="12" Margin="535,10,0,0" Click="btnExcluir_Click_1" RenderTransformOrigin="1.47,0.661"
         />
     </Grid>
 </Window>

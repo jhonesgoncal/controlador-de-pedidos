@@ -9,7 +9,8 @@
         xmlns:app="clr-namespace:ControladorDePedidos.WPF" 
         Title="Buscar Produto" Height="465.625" Width="759"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        Loaded="Window_Loaded">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -20,7 +21,7 @@
     </Window.Resources>
     <Grid>
         <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,19,0,0" TextWrapping="Wrap" Text="Termo da Busca: " VerticalAlignment="Top"/>
-        <TextBox  KeyDown="txtTermoDaBusca_KeyDown" Name="txtTermoDaBusca"    HorizontalAlignment="Left" Height="23" Margin="104,12,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="639"/>
+        <TextBox  KeyUp="txtTermoDaBusca_KeyDown" Name="txtTermoDaBusca" Height="23" Margin="104,12,10,0" TextWrapping="Wrap"  VerticalAlignment="Top"/>
         <ListView x:Name="lstProdutos" SelectionMode="Single" ItemsSource="{Binding}" Margin="10,50,10,0" d:CopyToken="99964309-2efb-4d59-99c3-851d199c8be3" Height="283" VerticalAlignment="Top">
             <ListView.View>
                 <GridView>
@@ -42,11 +43,10 @@
         <controls:dn32ImageButton x:Name="btnAdicionar"
             Style="{DynamicResource dn32ButtonStyle}" 
             Text="Adicionar"
-            NormalImage="/ControladorDePedidos.WPF;component/img/adicionar.png"
-            HorizontalAlignment="Left" VerticalAlignment="Top" Height="67" Width="103" 
+            NormalImage="/ControladorDePedidos.WPF;component/img/adicionar.png" 
             ImageSize="32"
             Padding="3"
-            FontSize="12" Margin="640,355,0,0"
+            FontSize="12" Margin="0,355,10,15" HorizontalAlignment="Right" Width="76"
            
         />
 

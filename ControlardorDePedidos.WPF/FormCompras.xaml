@@ -71,6 +71,22 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <Controls:dn32ImageButton x:Name="btnComprar"
+            Style="{DynamicResource dn32ButtonStyle}" 
+            Text="Efetivar Compra"
+            NormalImage="/dn32Layout;component/img/compras.png" VerticalAlignment="Top" Height="62" 
+            ImageSize="32"
+            Padding="3"
+            FontSize="12" Margin="0,5,123,0" Click="btnComprar_Click" RenderTransformOrigin="1.47,0.661" HorizontalAlignment="Right" Width="103"
+        />
+        <Controls:dn32ImageButton x:Name="btnCompraRecebida"
+            Style="{DynamicResource dn32ButtonStyle}" 
+            Text="Compra Recebida"
+            NormalImage="/dn32Layout;component/img/estoque.png" VerticalAlignment="Top" Height="62" 
+            ImageSize="32"
+            Padding="3"
+            FontSize="12" Margin="0,5,10,0" Click="btnCompraRecebida_Click" RenderTransformOrigin="1.47,0.661" HorizontalAlignment="Right" Width="108"
+        />
     </Grid>
 </Window>
 
