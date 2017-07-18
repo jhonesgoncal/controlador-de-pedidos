@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ControladorDePedidos.WPF"
         xmlns:controls="clr-namespace:dn32ImageButton.Controls;assembly=dn32Layout"
         mc:Ignorable="d"
-        Title="Cadastro de Compra" Height="472.47" Width="983.464"
+        Title="Cadastro de Compra" Height="559.47" Width="983.464"
         WindowStartupLocation="CenterScreen"
         Loaded="Window_Loaded">
     <Window.Resources>
@@ -15,8 +15,6 @@
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
-        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="14,52,0,0" TextWrapping="Wrap" Text="Codigo: " VerticalAlignment="Top"/>
-        <TextBox Name="txtCodigo" Text="{Binding Codigo}" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="73,44,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="77"/>
         <controls:dn32ImageButton x:Name="btnSalvar"
             Style="{DynamicResource dn32ButtonStyle}" 
             Text="Salvar"
@@ -46,7 +44,7 @@
             HorizontalAlignment="Left" VerticalAlignment="Top" Height="67" Width="99" 
             ImageSize="32"
             Padding="3"
-            FontSize="12" Margin="223,10,0,0"
+            FontSize="12" Margin="14,10,0,0"
             Click="btnObterRecomendacao_Click"
         />
         <controls:dn32ImageButton x:Name="btnAdicionar"
@@ -56,7 +54,7 @@
             HorizontalAlignment="Left" VerticalAlignment="Top" Height="67" Width="103" 
             ImageSize="32"
             Padding="3"
-            FontSize="12" Margin="327,10,0,0"
+            FontSize="12" Margin="118,10,0,0"
             Click="btnAdicionar_Click"
         />
         <controls:dn32ImageButton x:Name="btnEditar"
@@ -66,7 +64,7 @@
             HorizontalAlignment="Left" VerticalAlignment="Top"  Height="67" Width="95" 
             ImageSize="32"
             Padding="3"
-            FontSize="12" Margin="435,10,0,0" Click="btnEditar_Click"
+            FontSize="12" Margin="226,10,0,0" Click="btnEditar_Click"
         />
         <controls:dn32ImageButton x:Name="btnExcluir"
             Style="{DynamicResource dn32ButtonStyle}" 
@@ -75,7 +73,7 @@
             HorizontalAlignment="Left" VerticalAlignment="Top" Height="67" Width="97" 
             ImageSize="32"
             Padding="3"
-            FontSize="12" Margin="535,10,0,0" Click="btnExcluir_Click_1" RenderTransformOrigin="1.47,0.661"
+            FontSize="12" Margin="326,10,0,0" Click="btnExcluir_Click_1" RenderTransformOrigin="1.47,0.661"
         />
     </Grid>
 </Window>

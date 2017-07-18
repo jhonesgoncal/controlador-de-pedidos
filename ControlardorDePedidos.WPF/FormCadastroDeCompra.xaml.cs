@@ -21,39 +21,42 @@ namespace ControladorDePedidos.WPF
     /// </summary>
     public partial class FormCadastroDeCompra : Window
     {
+        RepositorioCompra repositorio;
+        RepositorioItemDaCompra repositorioItemDaCompra;
+        public int Codigo { get; set; }
         public FormCadastroDeCompra()
         {
             InitializeComponent();
-            this.DataContext = new Compra();
+            repositorio = new RepositorioCompra();
+            var compra = new Compra();
+            compra.DataDeCadastro = DateTime.Now;
+            compra.Status = eStatusDaCompra.NOVA;
+            repositorio.Adicione(compra);
+            Codigo = compra.Codigo;
+            this.DataContext = compra;
         }
 
         public FormCadastroDeCompra(Compra compra)
         {
             InitializeComponent();
+            repositorio = new RepositorioCompra();
             this.DataContext = compra;
+            Codigo = compra.Codigo;
         }
 
         private void btnSalvar_Click(object sender, RoutedEventArgs e)
         {
             var compra = (Compra)this.DataContext;
-            var repositorio = new RepositorioCompra();
-            if (compra.Codigo == 0)
-            {
-                //Novo Cadastro
-                repositorio.Adicione(compra);
-            }
-            else
-            {
+         
                 //Editando Cadastro
                 repositorio.Atualize(compra);
-            }
-
+            
             this.Close();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void btnObterRecomendacao_Click(object sender, RoutedEventArgs e)
@@ -65,6 +68,17 @@ namespace ControladorDePedidos.WPF
         {
             var formulario = new FormBuscaDeProduto();
             formulario.ShowDialog();
+            if(formulario.ProdutoSelecionado != null)
+            {
+                var itemDaCompra = new ItemDaCompra
+                {
+                    Compra = new Compra { Codigo = this.Codigo },
+                    Produto = formulario.ProdutoSelecionado,
+                    Quantidade = formulario.Quantidade,
+                    Valor = formulario.ProdutoSelecionado.ValorDeCompra
+                };
+                repositorioItemDaCompra.Adicione(itemDaCompra);
+            }
         }
 
         private void btnEditar_Click(object sender, RoutedEventArgs e)
