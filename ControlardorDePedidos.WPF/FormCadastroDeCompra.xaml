@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ControladorDePedidos.WPF"
         xmlns:controls="clr-namespace:dn32ImageButton.Controls;assembly=dn32Layout"
         mc:Ignorable="d"
-        Title="Cadastro de Compra" Height="559.47" Width="983.464"
+        Title="Cadastro de Compra" Height="656.97" Width="827.464"
         WindowStartupLocation="CenterScreen"
         Loaded="Window_Loaded">
     <Window.Resources>
@@ -22,9 +22,9 @@
             ImageSize="32"
             Padding="3"
             FontSize="12"
-            Margin="0,0,18,19"  RenderTransformOrigin="0.53,0.468" Click="btnSalvar_Click" Height="63" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="72" 
+            Margin="0,0,12,19"  RenderTransformOrigin="0.53,0.468" Click="btnSalvar_Click" Height="63" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="72" 
         />
-        <ListView x:Name="lstProdutos" SelectionMode="Single" ItemsSource="{Binding}" Margin="10,82,16,100" >
+        <ListView x:Name="lstProdutos" SelectionMode="Single" ItemsSource="{Binding}" Margin="14,95,12,87" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Codigo" Width="50" DisplayMemberBinding="{Binding Codigo}"/>

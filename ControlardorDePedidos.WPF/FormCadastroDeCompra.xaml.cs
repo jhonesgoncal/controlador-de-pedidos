@@ -27,6 +27,7 @@ namespace ControladorDePedidos.WPF
         public FormCadastroDeCompra()
         {
             InitializeComponent();
+            repositorioItemDaCompra = new RepositorioItemDaCompra();
             repositorio = new RepositorioCompra();
             var compra = new Compra();
             compra.DataDeCadastro = DateTime.Now;
@@ -39,6 +40,7 @@ namespace ControladorDePedidos.WPF
         public FormCadastroDeCompra(Compra compra)
         {
             InitializeComponent();
+            repositorioItemDaCompra = new RepositorioItemDaCompra();
             repositorio = new RepositorioCompra();
             this.DataContext = compra;
             Codigo = compra.Codigo;

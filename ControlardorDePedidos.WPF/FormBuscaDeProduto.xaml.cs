@@ -52,13 +52,13 @@ namespace ControladorDePedidos.WPF
                 MessageBox.Show("Selecione um item na lista");
                 return;
             }
-            if(txtQuantidade.Text == " ")
+            if(txtQuantidade.Text == " " || txtQuantidade.Text == null)
             {
                 MessageBox.Show("Informe a quantidade");
                 return;
             }
             int quantidade;
-            if(int.TryParse(txtQuantidade.Text, out quantidade))
+            if(int.TryParse(txtQuantidade.Text, out  quantidade))
             {
                 Quantidade = quantidade;
             }

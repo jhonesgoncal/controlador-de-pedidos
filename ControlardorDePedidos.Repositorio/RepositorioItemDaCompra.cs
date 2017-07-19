@@ -18,9 +18,10 @@ namespace ControladorDePedidos.Repositorio
 
         public void Adicione(ItemDaCompra itemDaCompra )
         {
-            var ItemDaCompraOriginal = contexto.Set<ItemDaCompra>().Find(itemDaCompra.Codigo);
-            if (ItemDaCompraOriginal != null)
-                throw new ApplicationException("Já existe uma venda com esse código");
+            var compraOriginal = contexto.Set<Compra>().Find(itemDaCompra.Compra.Codigo);
+            itemDaCompra.Compra = compraOriginal;
+            var produtoOriginal = contexto.Set<Produto>().Find(itemDaCompra.Produto.Codigo);
+            itemDaCompra.Produto = produtoOriginal;
             contexto.Set<ItemDaCompra>().Add(itemDaCompra);
             contexto.SaveChanges();
         }
