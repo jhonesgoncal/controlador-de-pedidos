@@ -23,26 +23,32 @@ namespace ControladorDePedidos.WPF
     {
         RepositorioCompra repositorio;
         RepositorioItemDaCompra repositorioItemDaCompra;
+        RepositorioProduto repositorioProduto;
         public int Codigo { get; set; }
         public FormCadastroDeCompra()
         {
             InitializeComponent();
-            repositorioItemDaCompra = new RepositorioItemDaCompra();
-            repositorio = new RepositorioCompra();
+            InicializeOperacoes();
             var compra = new Compra();
             compra.DataDeCadastro = DateTime.Now;
             compra.Status = eStatusDaCompra.NOVA;
             repositorio.Adicione(compra);
             Codigo = compra.Codigo;
-            this.DataContext = compra;
+            lstProdutos.DataContext = compra.ItensDaCompra;
+        }
+
+        private void InicializeOperacoes()
+        {
+            repositorioItemDaCompra = new RepositorioItemDaCompra();
+            repositorio = new RepositorioCompra();
+            repositorioProduto = new RepositorioProduto();
         }
 
         public FormCadastroDeCompra(Compra compra)
         {
             InitializeComponent();
-            repositorioItemDaCompra = new RepositorioItemDaCompra();
-            repositorio = new RepositorioCompra();
-            this.DataContext = compra;
+            InicializeOperacoes();
+            lstProdutos.DataContext = compra.ItensDaCompra;
             Codigo = compra.Codigo;
         }
 
@@ -63,7 +69,19 @@ namespace ControladorDePedidos.WPF
 
         private void btnObterRecomendacao_Click(object sender, RoutedEventArgs e)
         {
-
+            var listaEstoqueBaixo = repositorioProduto.ObtenhaProdutosComEstoqueBaixo();
+            foreach(var produto in listaEstoqueBaixo)
+            {
+                var itemDaCompra = new ItemDaCompra
+                {
+                    Compra = new Compra { Codigo = this.Codigo },
+                    Produto = produto,
+                    Quantidade = produto.QuantidadeDesejavelEmEstoque - produto.QuantidadeEmEstoque,
+                    Valor = produto.ValorDeCompra
+                };
+                repositorioItemDaCompra.Adicione(itemDaCompra);  
+            }
+            lstProdutos.DataContext = repositorioItemDaCompra.Liste(Codigo);
         }
 
         private void btnAdicionar_Click(object sender, RoutedEventArgs e)
@@ -80,6 +98,7 @@ namespace ControladorDePedidos.WPF
                     Valor = formulario.ProdutoSelecionado.ValorDeCompra
                 };
                 repositorioItemDaCompra.Adicione(itemDaCompra);
+                lstProdutos.DataContext = repositorioItemDaCompra.Liste(Codigo);
             }
         }
 

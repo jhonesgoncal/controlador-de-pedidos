@@ -39,6 +39,12 @@ namespace ControladorDePedidos.Repositorio
             var lista = contexto.Set<ItemDaCompra>().ToList();
             return lista;
         }
+        public List<ItemDaCompra> Liste(int CodigoDaCompra)
+        {
+            contexto = new Contexto();
+            var lista = contexto.Set<ItemDaCompra>().Where(x => x.Compra.Codigo == CodigoDaCompra).ToList();
+            return lista;
+        }
 
         public void Excluir(ItemDaCompra itemDaCompra)
         {

@@ -8,12 +8,15 @@
         mc:Ignorable="d"
         Title="Compras" Height="613.662" Width="852.801" WindowStartupLocation="CenterScreen"
         Loaded="FormCompras_OnLoaded"
+        xmlns:app="clr-namespace:ControladorDePedidos.WPF" 
+        Language="pt-BR"
         >
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/dn32Layout;component/Themes/dn32ImageButton.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
+            <app:ConversorDeData x:Key="ConversorDeData"/>
         </ResourceDictionary>
 
     </Window.Resources>
@@ -61,11 +64,11 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Codigo" Width="60" DisplayMemberBinding="{Binding Codigo}"/>
-                    <GridViewColumn Header="Valor Total" Width="110" DisplayMemberBinding="{Binding ValorTotal}"/>
+                    <GridViewColumn Header="Valor Total" Width="110" DisplayMemberBinding="{Binding ValorTotal, StringFormat='{}{0:C}'}"/>
                     <GridViewColumn Header="Quantidade de produtos" Width="140" DisplayMemberBinding="{Binding QuantidadeDeProdutos}"/>
-                    <GridViewColumn Header="Data da Compra" Width="110" DisplayMemberBinding="{Binding Path=DataDeEfetivacao, StringFormat='dd/MM/yyy'}"/>
-                    <GridViewColumn Header="Data do Cadastro" Width="110" DisplayMemberBinding="{Binding Path=DataDeCadastro, StringFormat='dd/MM/yyy'}"/>
-                    <GridViewColumn Header="Data do Recebimento" Width="140" DisplayMemberBinding="{Binding Path=DataDoRecebimento, StringFormat='dd/MM/yyy'}"/>
+                    <GridViewColumn Header="Data da Compra" Width="110" DisplayMemberBinding="{Binding Path=DataDeEfetivacao, Converter={StaticResource ConversorDeData}}"/>
+                    <GridViewColumn Header="Data do Cadastro" Width="110" DisplayMemberBinding="{Binding Path=DataDeCadastro,  Converter={StaticResource ConversorDeData}}"/>
+                    <GridViewColumn Header="Data do Recebimento" Width="140" DisplayMemberBinding="{Binding Path=DataDoRecebimento,  Converter={StaticResource ConversorDeData}}"/>
                     <GridViewColumn Header="Status" Width="110" DisplayMemberBinding="{Binding Status}"/>
 
                 </GridView>

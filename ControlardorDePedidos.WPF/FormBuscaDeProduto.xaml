@@ -10,7 +10,8 @@
         Title="Buscar Produto" Height="526.625" Width="759"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Loaded="Window_Loaded">
+        Loaded="Window_Loaded"
+        Language="pt-BR">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -28,8 +29,8 @@
                     <GridViewColumn Header="Codigo" Width="50" DisplayMemberBinding="{Binding Codigo}"/>
                     <GridViewColumn Header="Nome" Width="250" DisplayMemberBinding="{Binding Nome}"/>
                     <GridViewColumn Header="Marca" Width="70" DisplayMemberBinding="{Binding Marca.Nome}"/>
-                    <GridViewColumn Header="Valor de Compra" Width="110" DisplayMemberBinding="{Binding ValorDeCompra}"/>
-                    <GridViewColumn Header="Valor de Venda" Width="110" DisplayMemberBinding="{Binding ValorDeVenda}"/>
+                    <GridViewColumn Header="Valor de Compra" Width="110" DisplayMemberBinding="{Binding ValorDeCompra, StringFormat='{}{0:C}'}"/>
+                    <GridViewColumn Header="Valor de Venda" Width="110" DisplayMemberBinding="{Binding ValorDeVenda, StringFormat='{}{0:C}'}"/>
                     <GridViewColumn Header="Estoque" Width="100" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>

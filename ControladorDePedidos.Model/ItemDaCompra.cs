@@ -24,5 +24,12 @@ namespace ControladorDePedidos.Model
                 return Quantidade * Valor;
             }
         }
+        public int QuantidadeFinalEmEstoque {
+            get
+            {
+              return  Produto.QuantidadeEmEstoque + Quantidade;
+            }
+
+        }
     }
 }

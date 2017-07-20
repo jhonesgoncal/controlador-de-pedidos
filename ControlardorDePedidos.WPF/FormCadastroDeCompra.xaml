@@ -6,9 +6,10 @@
         xmlns:local="clr-namespace:ControladorDePedidos.WPF"
         xmlns:controls="clr-namespace:dn32ImageButton.Controls;assembly=dn32Layout"
         mc:Ignorable="d"
-        Title="Cadastro de Compra" Height="656.97" Width="827.464"
+        Title="Cadastro de Compra" Height="656.97" Width="1046.464"
         WindowStartupLocation="CenterScreen"
-        Loaded="Window_Loaded">
+        Loaded="Window_Loaded"
+        Language="pt-BR">
     <Window.Resources>
         <ResourceDictionary Source="/dn32Layout;component/Themes/dn32ImageButton.xaml">
 
@@ -28,11 +29,13 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Codigo" Width="50" DisplayMemberBinding="{Binding Codigo}"/>
-                    <GridViewColumn Header="Nome" Width="250" DisplayMemberBinding="{Binding Nome}"/>
-                    <GridViewColumn Header="Marca" Width="70" DisplayMemberBinding="{Binding Marca.Nome}"/>
-                    <GridViewColumn Header="Valor" Width="110" DisplayMemberBinding="{Binding ValorDeCompra}"/>
-                    <GridViewColumn Header="Quantidade" Width="110" DisplayMemberBinding="{Binding ValorDeVenda}"/>
-                    <GridViewColumn Header="Quantidade Final em Estoque" Width="170" DisplayMemberBinding="{Binding ValorDeVenda}"/>
+                    <GridViewColumn Header="Nome" Width="250" DisplayMemberBinding="{Binding Produto.Nome}"/>
+                    <GridViewColumn Header="Marca" Width="70" DisplayMemberBinding="{Binding Produto.Marca.Nome}"/>
+                    <GridViewColumn Header="Valor de Compra" Width="110" DisplayMemberBinding="{Binding Valor, StringFormat='{}{0:C}'}"/>
+                    <GridViewColumn Header="Valor de Venda" Width="110" DisplayMemberBinding="{Binding Produto.ValorDeVenda, StringFormat='{}{0:C}'}"/>
+                    <GridViewColumn Header="Valor Total" Width="110" DisplayMemberBinding="{Binding ValorTotal, StringFormat='{}{0:C}'}"/>
+                    <GridViewColumn Header="Quantidade" Width="110" DisplayMemberBinding="{Binding Quantidade}"/>
+                    <GridViewColumn Header="Quantidade Final em Estoque" Width="170" DisplayMemberBinding="{Binding QuantidadeFinalEmEstoque}"/>
 
                 </GridView>
             </ListView.View>
