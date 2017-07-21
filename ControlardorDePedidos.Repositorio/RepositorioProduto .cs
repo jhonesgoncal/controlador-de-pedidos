@@ -54,6 +54,12 @@ namespace ControladorDePedidos.Repositorio
             return lista;
         }
 
+        public Produto Consultar(int codigo)
+        {
+            contexto = new Contexto();
+            return contexto.Set<Produto>().FirstOrDefault(x => x.Codigo == codigo);
+        }
+
         public List<Produto> ObtenhaProdutosComEstoqueBaixo()
         {
             contexto = new Contexto();

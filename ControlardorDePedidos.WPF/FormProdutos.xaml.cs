@@ -78,9 +78,9 @@ namespace ControladorDePedidos.WPF
 
         }
 
-        private void btnNovo_Click_1(object sender, RoutedEventArgs e)
+        private void btnAtualizar_Click(object sender, RoutedEventArgs e)
         {
-
+            CarregueElementosDoBancoDeDados();
         }
     }
 }

@@ -86,12 +86,83 @@ namespace ControladorDePedidos.WPF
 
         private void btnCompraRecebida_Click(object sender, RoutedEventArgs e)
         {
+            //Adicionar no estoque
+            if (lstCompras.SelectedItem == null)
+            {
+                MessageBox.Show("Selecione um item");
+                return;
+            }
 
+            var compra = (Compra)lstCompras.SelectedItem;
+            if (compra.Status != eStatusDaCompra.EFETIVADA)
+            {
+                MessageBox.Show("Essa compra precisa estar efetivada!");
+                return;
+            }
+            if (compra.ItensDaCompra.Count == 0)
+            {
+                MessageBox.Show("Nenhum item a ser comprado nessa solicitação de compra.");
+                return;
+            }
+            //adicionar no estoque
+            var itensDaCompra = obtenhaListaDeItensDaCompra(compra);
+            var repositoriioDeProduto = new RepositorioProduto();
+            foreach(var item in itensDaCompra)
+            {
+                var produtoDacompra = item.Produto;
+                var produtoBanco = repositoriioDeProduto.Consultar(produtoDacompra.Codigo);
+                produtoBanco.QuantidadeEmEstoque += item.Quantidade;
+                repositoriioDeProduto.Atualize(produtoBanco);
+            }
+
+            //ataulizar banco de daos
+            compra.Status = eStatusDaCompra.RECEBIDA;
+            compra.DataDoRecebimento = DateTime.Now;
+            repositorio.Atualize(compra);
+            CarregueElementosDoBancoDeDados();
         }
+
+       
 
         private void btnComprar_Click(object sender, RoutedEventArgs e)
         {
+            //Pega os itens da compra e efetiva
+            if (lstCompras.SelectedItem == null)
+            {
+                MessageBox.Show("Selecione um item");
+                return;
+            }
+            
+            var compra = (Compra)lstCompras.SelectedItem;
+            if(compra.Status != eStatusDaCompra.NOVA)
+            {
+                MessageBox.Show("Essa compra já foi efetivada!");
+                return;
+            }
+            if(compra.ItensDaCompra.Count == 0)
+            {
+                MessageBox.Show("Nenhum item a ser comprado nessa solicitação de compra.");
+                return;
+            }
+            var itensDaCompra = obtenhaListaDeItensDaCompra(compra);
+            string listaString = "";
+            foreach(var item in itensDaCompra)
+            {
+                listaString += $"{item.Quantidade} - {item.Produto.Nome}  {item.Produto.Marca.Nome}\n";
+            }
 
+            //Salva no banco
+            compra.Status = eStatusDaCompra.EFETIVADA;
+            compra.DataDeEfetivacao = DateTime.Now;
+            repositorio.Atualize(compra);
+            CarregueElementosDoBancoDeDados();
+
+        }
+        private static List<ItemDaCompra> obtenhaListaDeItensDaCompra(Compra compra)
+        {
+            var repositorioItemDaCompra = new RepositorioItemDaCompra();
+            var itensDaCompra = repositorioItemDaCompra.Liste(compra.Codigo);
+            return itensDaCompra;
         }
     }
 }

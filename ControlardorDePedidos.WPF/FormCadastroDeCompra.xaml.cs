@@ -25,6 +25,8 @@ namespace ControladorDePedidos.WPF
         RepositorioItemDaCompra repositorioItemDaCompra;
         RepositorioProduto repositorioProduto;
         public int Codigo { get; set; }
+        public Compra Compra { get; set; }
+
         public FormCadastroDeCompra()
         {
             InitializeComponent();
@@ -34,6 +36,7 @@ namespace ControladorDePedidos.WPF
             compra.Status = eStatusDaCompra.NOVA;
             repositorio.Adicione(compra);
             Codigo = compra.Codigo;
+            Compra = compra;
             lstProdutos.DataContext = compra.ItensDaCompra;
         }
 
@@ -50,25 +53,28 @@ namespace ControladorDePedidos.WPF
             InicializeOperacoes();
             lstProdutos.DataContext = compra.ItensDaCompra;
             Codigo = compra.Codigo;
+            Compra = compra;
         }
 
         private void btnSalvar_Click(object sender, RoutedEventArgs e)
         {
             var compra = (Compra)this.DataContext;
-         
+            if(compra != null)
+            {
                 //Editando Cadastro
                 repositorio.Atualize(compra);
-            
+            }
+         
             this.Close();
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            
         }
 
         private void btnObterRecomendacao_Click(object sender, RoutedEventArgs e)
         {
+            if(Compra.Status != eStatusDaCompra.NOVA)
+            {
+                MessageBox.Show("Não é possivel adicionar produtos a uma compra efetivada!");
+                return;
+            }
             var listaEstoqueBaixo = repositorioProduto.ObtenhaProdutosComEstoqueBaixo();
             foreach(var produto in listaEstoqueBaixo)
             {
@@ -86,6 +92,11 @@ namespace ControladorDePedidos.WPF
 
         private void btnAdicionar_Click(object sender, RoutedEventArgs e)
         {
+            if (Compra.Status != eStatusDaCompra.NOVA)
+            {
+                MessageBox.Show("Não é possivel adicionar produtos a uma compra efetivada!");
+                return;
+            }
             var formulario = new FormBuscaDeProduto();
             formulario.ShowDialog();
             if(formulario.ProdutoSelecionado != null)
@@ -109,13 +120,18 @@ namespace ControladorDePedidos.WPF
 
         private void btnExcluir_Click(object sender, RoutedEventArgs e)
         {
+            if (lstProdutos.SelectedItem == null)
+            {
+                MessageBox.Show("Selecione um item");
+                return;
+            }
 
+            var itemSelecionado = (ItemDaCompra)lstProdutos.SelectedItem;
+            repositorioItemDaCompra.Excluir(itemSelecionado);
+            lstProdutos.DataContext = repositorioItemDaCompra.Liste(Codigo);
         }
 
-        private void btnExcluir_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
+       
 
     
     }
