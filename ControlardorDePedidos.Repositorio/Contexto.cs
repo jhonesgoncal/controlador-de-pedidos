@@ -25,6 +25,8 @@ namespace ControladorDePedidos.Repositorio
         public DbSet<Cliente> Cliente { get; set; }
         public DbSet<Compra> Compra { get; set; }
         public DbSet<ItemDaCompra> ItemDaCompra { get; set; }
+        public DbSet<Venda> Venda { get; set; }
+        public DbSet<ItemDaVenda> ItemDaVenda { get; set; }
 
     }
 

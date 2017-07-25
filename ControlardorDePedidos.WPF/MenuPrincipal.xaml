@@ -28,7 +28,7 @@
             Style="{DynamicResource dn32ButtonStyle}" 
             Text="Vendas"
             NormalImage="/dn32Layout;component/img/vendas.png"
-            HorizontalAlignment="Left" VerticalAlignment="Top" Height="137" Width="230" Margin="482,5,0,0"
+            HorizontalAlignment="Left" VerticalAlignment="Top" Height="137" Width="230" Margin="482,5,0,0" Click="btnVendas_Click"
         />
         <Controls:dn32ImageButton x:Name="btnFornecedor"
             Style="{DynamicResource dn32ButtonStyle}" 

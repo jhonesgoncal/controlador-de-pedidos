@@ -72,6 +72,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="FormCadastroDeVenda .xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="FormCadastroDeCompra.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -91,6 +95,10 @@
     <Page Include="FormClientes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormVendas .xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="FormCompras.xaml">
       <SubType>Designer</SubType>
@@ -124,6 +132,9 @@
     <Compile Include="FormCadastroDeCliente.xaml.cs">
       <DependentUpon>FormCadastroDeCliente.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FormCadastroDeVenda .xaml.cs">
+      <DependentUpon>FormCadastroDeVenda .xaml</DependentUpon>
+    </Compile>
     <Compile Include="FormCadastroDeCompra.xaml.cs">
       <DependentUpon>FormCadastroDeCompra.xaml</DependentUpon>
     </Compile>
@@ -138,6 +149,9 @@
     </Compile>
     <Compile Include="FormClientes.xaml.cs">
       <DependentUpon>FormClientes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormVendas .xaml.cs">
+      <DependentUpon>FormVendas .xaml</DependentUpon>
     </Compile>
     <Compile Include="FormCompras.xaml.cs">
       <DependentUpon>FormCompras.xaml</DependentUpon>

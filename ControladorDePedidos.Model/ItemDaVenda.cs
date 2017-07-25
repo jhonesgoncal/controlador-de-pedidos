@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace ControladorDePedidos.Model
 {
-    public class ItemDaCompra
+    public class ItemDaVenda
     {
         [Key]
         public int Codigo { get; set; }
         public virtual Produto Produto { get; set; }
-        public virtual Compra Compra { get; set; }
+        public virtual Venda Venda { get; set; }
         public int Quantidade { get; set; }
         public decimal Valor { get; set; }
         [NotMapped]
@@ -24,13 +24,6 @@ namespace ControladorDePedidos.Model
                 return Quantidade * Valor;
             }
         }
-        [NotMapped]
-        public int QuantidadeFinalEmEstoque {
-            get
-            {
-              return  Produto.QuantidadeEmEstoque + Quantidade;
-            }
-
-        }
+     
     }
 }

@@ -56,9 +56,15 @@
     <Compile Include="Migrations\201707181621431_compra.Designer.cs">
       <DependentUpon>201707181621431_compra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707251623583_venda.cs" />
+    <Compile Include="Migrations\201707251623583_venda.Designer.cs">
+      <DependentUpon>201707251623583_venda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositorioCliente .cs" />
+    <Compile Include="RepositorioItemDaVenda .cs" />
+    <Compile Include="RepositorioVenda .cs" />
     <Compile Include="RepositorioItemDaCompra.cs" />
     <Compile Include="RepositorioCompra .cs" />
     <Compile Include="RepositorioUsuario.cs" />
@@ -81,6 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707181621431_compra.resx">
       <DependentUpon>201707181621431_compra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707251623583_venda.resx">
+      <DependentUpon>201707251623583_venda.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

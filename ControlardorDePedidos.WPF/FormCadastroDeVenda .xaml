@@ -1,0 +1,60 @@
+﻿<Window x:Class="ControladorDePedidos.WPF.FormCadastroDeVenda"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ControladorDePedidos.WPF"
+        xmlns:controls="clr-namespace:dn32ImageButton.Controls;assembly=dn32Layout"
+        mc:Ignorable="d"
+        Title="Cadastro de Venda" Height="656.97" Width="716.464"
+        WindowStartupLocation="CenterScreen"
+        Language="pt-BR">
+    <Window.Resources>
+        <ResourceDictionary Source="/dn32Layout;component/Themes/dn32ImageButton.xaml">
+
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <controls:dn32ImageButton x:Name="btnSalvar"
+            Style="{DynamicResource dn32ButtonStyle}" 
+            Text="Salvar"
+            NormalImage="/dn32Layout;component/img/salvar.png" 
+            ImageSize="32"
+            Padding="3"
+            FontSize="12"
+            Margin="0,0,12,19"  RenderTransformOrigin="0.53,0.468" Click="btnSalvar_Click" Height="63" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="72" 
+        />
+        <ListView x:Name="lstProdutos" SelectionMode="Single" ItemsSource="{Binding}" Margin="14,95,12,87" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nome" Width="250" DisplayMemberBinding="{Binding Produto.Nome}"/>
+                    <GridViewColumn Header="Marca" Width="70" DisplayMemberBinding="{Binding Produto.Marca.Nome}"/>
+                    <GridViewColumn Header="Valor de Venda" Width="110" DisplayMemberBinding="{Binding Produto.ValorDeVenda, StringFormat='{}{0:C}'}"/>
+                    <GridViewColumn Header="Valor Total" Width="110" DisplayMemberBinding="{Binding ValorTotal, StringFormat='{}{0:C}'}"/>
+                    <GridViewColumn Header="Quantidade" Width="110" DisplayMemberBinding="{Binding Quantidade}"/>
+                    
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <controls:dn32ImageButton x:Name="btnAdicionar"
+            Style="{DynamicResource dn32ButtonStyle}" 
+            Text="Adicionar"
+            NormalImage="/ControladorDePedidos.WPF;component/img/adicionar.png"
+            HorizontalAlignment="Left" VerticalAlignment="Top" Height="67" Width="103" 
+            ImageSize="32"
+            Padding="3"
+            FontSize="12" Margin="14,10,0,0"
+            Click="btnAdicionar_Click"
+        />
+        <controls:dn32ImageButton x:Name="btnExcluir"
+            Style="{DynamicResource dn32ButtonStyle}" 
+            Text="Excluir"
+            NormalImage="/dn32Layout;component/img/excluir.png"
+            HorizontalAlignment="Left" VerticalAlignment="Top" Height="67" Width="97" 
+            ImageSize="32"
+            Padding="3"
+            FontSize="12" Margin="122,10,0,0" Click="btnExcluir_Click" RenderTransformOrigin="1.47,0.661"
+        />
+    </Grid>
+</Window>
