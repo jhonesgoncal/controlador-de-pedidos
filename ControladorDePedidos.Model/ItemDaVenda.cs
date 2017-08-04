@@ -8,10 +8,8 @@ using System.Threading.Tasks;
 
 namespace ControladorDePedidos.Model
 {
-    public class ItemDaVenda
+    public class ItemDaVenda : ClasseBase
     {
-        [Key]
-        public int Codigo { get; set; }
         public virtual Produto Produto { get; set; }
         public virtual Venda Venda { get; set; }
         public int Quantidade { get; set; }

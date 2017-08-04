@@ -4,19 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ControladorDePedidos.Model;
+using ControlardorDePedidos.Repositorio;
 
 namespace ControladorDePedidos.Repositorio
 {
-    public class RepositorioItemDaVenda
+    public class RepositorioItemDaVenda : RepositorioGenerico<ItemDaVenda>
     {
-        private Contexto contexto;
-
-        public RepositorioItemDaVenda()
-        {
-            contexto = new Contexto();
-        }
-
-        public void Adicione(ItemDaVenda itemDaVenda )
+        public override void Adicione(ItemDaVenda itemDaVenda )
         {
             var vendaOriginal = contexto.Set<Venda>().Find(itemDaVenda.Venda.Codigo);
             itemDaVenda.Venda = vendaOriginal;
@@ -26,33 +20,12 @@ namespace ControladorDePedidos.Repositorio
             contexto.SaveChanges();
         }
 
-        public void Atualize(ItemDaVenda itemDaVenda)
-        {
-            var original = contexto.Set<ItemDaVenda>().Find(itemDaVenda.Codigo);
-            contexto.Entry(original).CurrentValues.SetValues(itemDaVenda);
-            contexto.SaveChanges();
-        }
-
-        public List<ItemDaVenda> Liste()
-        {
-            contexto = new Contexto();
-            var lista = contexto.Set<ItemDaVenda>().ToList();
-            return lista;
-        }
+       
         public List<ItemDaVenda> Liste(int CodigoDaVenda)
         {
             contexto = new Contexto();
             var lista = contexto.Set<ItemDaVenda>().Where(x => x.Venda.Codigo == CodigoDaVenda).ToList();
             return lista;
         }
-
-        public void Excluir(ItemDaVenda itemDaVenda)
-        {
-            var original = contexto.Set<ItemDaVenda>().Find(itemDaVenda.Codigo);
-            contexto.Set<ItemDaVenda>().Remove(original);
-            contexto.SaveChanges();
-        }
-
-
     }
 }

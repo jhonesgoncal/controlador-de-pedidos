@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace ControladorDePedidos.Model
 {
-    public class Produto
+    public class Produto : ClasseBase
     {
-        [Key]
-        public int Codigo { get; set; }
         public string Nome { get; set; }
         public virtual Marca Marca { get; set; }
         public decimal ValorDeCompra { get; set; }

@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace ControladorDePedidos.Model
 {
-    public class Usuario
+    public class Usuario : ClasseBase
     {
-        [Key]
-        public int Codigo { get; set; }
         public string Nome { get; set; }
         public bool Administrador { get; set; }
         public bool Clientes { get; set; }

@@ -63,6 +63,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositorioCliente .cs" />
+    <Compile Include="RepositorioGenerico.cs" />
     <Compile Include="RepositorioItemDaVenda .cs" />
     <Compile Include="RepositorioVenda .cs" />
     <Compile Include="RepositorioItemDaCompra.cs" />
