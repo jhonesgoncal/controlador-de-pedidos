@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ControlardorDePedidos.Repositorio
+namespace ControladorDePedidos.Repositorio
 {
     public class RepositorioGenerico<T> where T : ClasseBase
     {

@@ -3,6 +3,8 @@ using ControladorDePedidos.Repositorio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,7 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using static ControladorDePedidos.WPF.Utilitarios;
 namespace ControladorDePedidos.WPF
 {
     /// <summary>
@@ -151,13 +153,19 @@ namespace ControladorDePedidos.WPF
                 listaString += $"{item.Quantidade} - {item.Produto.Nome}  {item.Produto.Marca.Nome}\n";
             }
 
-            //Salva no banco
+            //Enviar Email
+            EnviarEmail("jhones.goncalves@sequenza.com.br", "titulo de teste", listaString);
+
+            //Atualiza o banco de dados informado que a compra foi realizada
             compra.Status = eStatusDaCompra.EFETIVADA;
             compra.DataDeEfetivacao = DateTime.Now;
             repositorio.Atualize(compra);
             CarregueElementosDoBancoDeDados();
 
         }
+
+       
+
         private static List<ItemDaCompra> obtenhaListaDeItensDaCompra(Compra compra)
         {
             var repositorioItemDaCompra = new RepositorioItemDaCompra();

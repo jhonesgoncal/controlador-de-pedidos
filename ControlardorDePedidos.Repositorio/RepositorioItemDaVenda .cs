@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ControladorDePedidos.Model;
-using ControlardorDePedidos.Repositorio;
+using ControladorDePedidos.Repositorio;
 
 namespace ControladorDePedidos.Repositorio
 {
