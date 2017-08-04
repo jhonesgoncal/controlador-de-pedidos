@@ -15,17 +15,20 @@ namespace ControladorDePedidos.Repositorio
         public override void Adicione(Produto produto )
         {
             var MarcaOriginal = contexto.Set<Marca>().Find(produto.Marca.Codigo);
+            var FornecedorOriginal = contexto.Set<Fornecedor>().Find(produto.Fornecedor.Codigo);
             produto.Marca = MarcaOriginal;
-            contexto.Set<Produto>().Add(produto);
-            contexto.SaveChanges();
+            produto.Fornecedor = FornecedorOriginal;
+            base.Adicione(produto);
         }
 
 
         public override void Atualize(Produto produto)
         {
             var MarcaOriginal = contexto.Set<Marca>().Find(produto.Marca.Codigo);
+            var FornecedorOriginal = contexto.Set<Fornecedor>().Find(produto.Fornecedor.Codigo);
             var original = contexto.Set<Produto>().Find(produto.Codigo);
             original.Marca = MarcaOriginal;
+            produto.Fornecedor = FornecedorOriginal;
             contexto.Entry(original).CurrentValues.SetValues(produto);
             contexto.SaveChanges();
         }

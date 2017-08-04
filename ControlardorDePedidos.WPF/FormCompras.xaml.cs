@@ -147,14 +147,22 @@ namespace ControladorDePedidos.WPF
                 return;
             }
             var itensDaCompra = obtenhaListaDeItensDaCompra(compra);
-            string listaString = "";
-            foreach(var item in itensDaCompra)
+            var listaAgrupada = itensDaCompra.GroupBy(x => x.Produto.Fornecedor).ToList();
+            string listaString = "Prezado, <br> Por favor enviar os seguintes produtos relacionados na lista abaixo:<br>";
+            foreach(var item in listaAgrupada)
             {
-                listaString += $"{item.Quantidade} - {item.Produto.Nome}  {item.Produto.Marca.Nome}\n";
+                var fornecedor = item.Key;
+                var itens = item.ToList();
+                foreach(var itemDaCompra in itens)
+                {
+                    listaString += $"{itemDaCompra.Quantidade} - {itemDaCompra.Produto.Nome}  {itemDaCompra.Produto.Marca.Nome}<br>";
+                }
+                //Enviar Email
+                EnviarEmail(fornecedor.Email, "Solicitação de compra", listaString);
+
             }
 
-            //Enviar Email
-            EnviarEmail("jhones.goncalves@sequenza.com.br", "titulo de teste", listaString);
+           
 
             //Atualiza o banco de dados informado que a compra foi realizada
             compra.Status = eStatusDaCompra.EFETIVADA;
