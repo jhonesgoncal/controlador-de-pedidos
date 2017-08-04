@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ControladorDePedidos.WPF"
         xmlns:controls="clr-namespace:dn32ImageButton.Controls;assembly=dn32Layout"
         mc:Ignorable="d"
-        Title="Cadastro de Produto" Height="352.47" Width="385.214"
+        Title="Cadastro de Produto" Height="421.47" Width="385.214"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         Loaded="FormCadastroDeProduto_OnLoaded">
@@ -21,24 +21,25 @@
         <controls:dn32ImageButton x:Name="btnSalvar"
             Style="{DynamicResource dn32ButtonStyle}" 
             Text="Salvar"
-            NormalImage="/dn32Layout;component/img/salvar.png"
-            HorizontalAlignment="Left" VerticalAlignment="Top" Height="62" Width="66" 
+            NormalImage="/dn32Layout;component/img/salvar.png" 
             ImageSize="32"
             Padding="3"
             FontSize="12"
-            Margin="291,238,0,0" RenderTransformOrigin="0.53,0.468" Click="btnSalvar_Click" 
+            Margin="0,0,22,16" RenderTransformOrigin="0.53,0.468" Click="btnSalvar_Click" Height="64" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="66" 
         />
         <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,76,0,0" TextWrapping="Wrap" Text="Marca: " VerticalAlignment="Top"/>
-        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,104,0,0" TextWrapping="Wrap" Text="Valor de Compra: " VerticalAlignment="Top"/>
-        <TextBox x:Name="txtValorCompra" Text="{Binding ValorDeCompra}" HorizontalAlignment="Left" Height="23" Margin="154,98,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="203"/>
-        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,132,0,0" TextWrapping="Wrap" Text="Valor da Venda: " VerticalAlignment="Top"/>
-        <TextBox x:Name="txtQuantidadeDesejavel" Text="{Binding QuantidadeDesejavelEmEstoque}"  HorizontalAlignment="Left" Height="23" Margin="154,182,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="203"/>
-        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,160,0,0" TextWrapping="Wrap" Text="Quantidade em Estoque: " VerticalAlignment="Top"/>
-        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,188,0,0" TextWrapping="Wrap" Text="Estoque Desejavel: " VerticalAlignment="Top" RenderTransformOrigin="0.495,-1.5"/>
-        <TextBox x:Name="txtQuantidadeEstoque"  Text="{Binding QuantidadeEmEstoque}" HorizontalAlignment="Left" Height="23" Margin="154,154,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="203"/>
-        <TextBox x:Name="txtValorVenda" Text="{Binding ValorDeVenda}" HorizontalAlignment="Left" Height="23" Margin="154,126,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="203"/>
-        <TextBox x:Name="txtEstoqueMinimo" Text="{Binding QuantidadeMinimaEmEstoque}" HorizontalAlignment="Left" Height="23" Margin="154,210,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="203"/>
-        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,216,0,0" TextWrapping="Wrap" Text="Estoque Minimo: " VerticalAlignment="Top"/>
+        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,133,0,0" TextWrapping="Wrap" Text="Valor de Compra: " VerticalAlignment="Top"/>
+        <TextBox x:Name="txtValorCompra" Text="{Binding ValorDeCompra}" HorizontalAlignment="Left" Height="23" Margin="154,127,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="203"/>
+        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,161,0,0" TextWrapping="Wrap" Text="Valor da Venda: " VerticalAlignment="Top"/>
+        <TextBox x:Name="txtQuantidadeDesejavel" Text="{Binding QuantidadeDesejavelEmEstoque}"  HorizontalAlignment="Left" Height="23" Margin="154,211,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="203"/>
+        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,189,0,0" TextWrapping="Wrap" Text="Quantidade em Estoque: " VerticalAlignment="Top"/>
+        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,217,0,0" TextWrapping="Wrap" Text="Estoque Desejavel: " VerticalAlignment="Top" RenderTransformOrigin="0.495,-1.5"/>
+        <TextBox x:Name="txtQuantidadeEstoque"  Text="{Binding QuantidadeEmEstoque}" HorizontalAlignment="Left" Height="23" Margin="154,183,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="203"/>
+        <TextBox x:Name="txtValorVenda" Text="{Binding ValorDeVenda}" HorizontalAlignment="Left" Height="23" Margin="154,155,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="203"/>
+        <TextBox x:Name="txtEstoqueMinimo" Text="{Binding QuantidadeMinimaEmEstoque}" HorizontalAlignment="Left" Height="23" Margin="154,239,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="203"/>
+        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,245,0,0" TextWrapping="Wrap" Text="Estoque Minimo: " VerticalAlignment="Top"/>
         <ComboBox Name="cmbMarcas" HorizontalAlignment="Left" Margin="154,71,0,0" VerticalAlignment="Top" Width="203" ItemsSource="{Binding}" SelectedValuePath="Codigo" DisplayMemberPath="Nome"/>
+        <TextBlock  HorizontalAlignment="Left" TextAlignment="Left" Margin="10,103,0,0" TextWrapping="Wrap" Text="Fornecedor: " VerticalAlignment="Top" Width="85"/>
+        <ComboBox x:Name="cmbFornecedores" HorizontalAlignment="Left" Margin="154,98,0,0" VerticalAlignment="Top" Width="203" ItemsSource="{Binding}" SelectedValuePath="Codigo" DisplayMemberPath="Nome"/>
     </Grid>
 </Window>

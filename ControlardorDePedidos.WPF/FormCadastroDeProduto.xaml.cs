@@ -22,10 +22,12 @@ namespace ControladorDePedidos.WPF
     public partial class FormCadastroDeProduto : Window
     {
         private RepositorioMarca repositorioMarca;
+        private RepositorioFornecedor repositorioFornecedor;
         private RepositorioProduto repositorioProduto;
         public FormCadastroDeProduto()
         {
             repositorioMarca = new RepositorioMarca();
+            repositorioFornecedor = new RepositorioFornecedor();
             repositorioProduto = new RepositorioProduto();
             InitializeComponent();
             this.DataContext = new Produto();
@@ -34,17 +36,22 @@ namespace ControladorDePedidos.WPF
         public FormCadastroDeProduto(Produto produto)
         {
             repositorioMarca = new RepositorioMarca();
+            repositorioFornecedor = new RepositorioFornecedor();
             repositorioProduto = new RepositorioProduto();
             InitializeComponent();
             this.DataContext = produto;
             cmbMarcas.SelectedValue = produto.Marca.Codigo;
+            cmbFornecedores.SelectedValue = produto.Fornecedor.Codigo;
         }
 
         private void FormCadastroDeProduto_OnLoaded(object sender, RoutedEventArgs e)
         {
             var marcas = repositorioMarca.Liste();
             cmbMarcas.DataContext = marcas;
-           
+
+            var fornecedor = repositorioFornecedor.Liste();
+            cmbFornecedores.DataContext = fornecedor;
+
 
         }
 
@@ -53,12 +60,22 @@ namespace ControladorDePedidos.WPF
             var produto = (Produto)this.DataContext;
             if (cmbMarcas.SelectedItem == null)
             {
-                MessageBox.Show("Selecione uma marca");
+                MessageBox.Show("Selecione uma Marca");
             }
             else
             {
                 produto.Marca = (Marca) cmbMarcas.SelectedItem;
             }
+
+            if (cmbFornecedores.SelectedItem == null)
+            {
+                MessageBox.Show("Selecione um Fornecedor");
+            }
+            else
+            {
+                produto.Fornecedor = (Fornecedor)cmbFornecedores.SelectedItem;
+            }
+
 
             if (produto.Codigo == 0)
             {

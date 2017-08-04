@@ -55,5 +55,11 @@ namespace ControladorDePedidos.WPF
             var janelaVendas = new FormVendas();
             janelaVendas.Show();
         }
+
+        private void btnFornecedor_Click(object sender, RoutedEventArgs e)
+        {
+            var janelaFornecedores = new FormFornecedores();
+            janelaFornecedores.Show();
+        }
     }
 }

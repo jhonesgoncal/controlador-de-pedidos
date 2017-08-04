@@ -18,7 +18,7 @@ namespace ControladorDePedidos.Repositorio
             base.OnModelCreating(modelBuilder);
         }
 
-        public Contexto() : base("DefaultConnection") {  }
+        public Contexto() : base("DefaultConnection") { }
         public DbSet<Marca> Marca { get; set; }
         public DbSet<Produto> Produto { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
@@ -27,7 +27,7 @@ namespace ControladorDePedidos.Repositorio
         public DbSet<ItemDaCompra> ItemDaCompra { get; set; }
         public DbSet<Venda> Venda { get; set; }
         public DbSet<ItemDaVenda> ItemDaVenda { get; set; }
-
+        public DbSet<Fornecedor> fornecedor { get; set; } 
     }
 
 }

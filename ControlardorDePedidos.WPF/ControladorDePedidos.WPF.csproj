@@ -64,6 +64,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="FormCadastroDeFornecedor.xaml.cs">
+      <DependentUpon>FormCadastroDeFornecedor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormFornecedores.xaml.cs">
+      <DependentUpon>FormFornecedores.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Utilitarios.cs" />
     <Page Include="FormBuscaDeProduto.xaml">
       <SubType>Designer</SubType>
@@ -72,6 +78,10 @@
     <Page Include="FormCadastroDeCliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormCadastroDeFornecedor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="FormCadastroDeVenda .xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -96,6 +106,10 @@
     <Page Include="FormClientes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormFornecedores.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="FormVendas .xaml">
       <Generator>MSBuild:Compile</Generator>
