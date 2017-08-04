@@ -70,6 +70,9 @@
     <Compile Include="FormFornecedores.xaml.cs">
       <DependentUpon>FormFornecedores.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Utilitarios.cs" />
     <Page Include="FormBuscaDeProduto.xaml">
       <SubType>Designer</SubType>
@@ -130,6 +133,10 @@
     <Page Include="FormUsuarios.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MenuPrincipal.xaml">
       <Generator>MSBuild:Compile</Generator>

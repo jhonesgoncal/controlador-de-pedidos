@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ControladorDePedidos.WPF"
         xmlns:controls="clr-namespace:dn32ImageButton.Controls;assembly=dn32Layout"
         mc:Ignorable="d"
-        Title="Cadastro de Usuario" Height="355.5" Width="299.564"
+        Title="Cadastro de Usuario" Height="428.617" Width="299.564"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
     <Window.Resources>
@@ -27,7 +27,7 @@
             FontSize="12"
             Margin="206,0,0,11" RenderTransformOrigin="0.53,0.468" Click="btnSalvar_Click" 
         />
-        <GroupBox Header="Permissoes" HorizontalAlignment="Left" Height="149" Margin="69,88,0,0" VerticalAlignment="Top" Width="203">
+        <GroupBox Header="Permissoes" HorizontalAlignment="Left" Height="149" Margin="75,165,0,0" VerticalAlignment="Top" Width="203">
             <Grid>
                 <CheckBox IsChecked="{Binding Administrador}"  Content="Administrador" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top"/>
                 <CheckBox IsChecked="{Binding Clientes}" Content="Clientes" HorizontalAlignment="Left" Margin="10,22,0,0" VerticalAlignment="Top"/>
@@ -39,5 +39,9 @@
             </Grid>
 
         </GroupBox>
+        <PasswordBox x:Name="txtSenha"  HorizontalAlignment="Left" Margin="69,83,0,0" VerticalAlignment="Top" Width="203" Height="22"/>
+        <TextBlock  HorizontalAlignment="Left" TextAlignment="Left" Margin="10,89,0,0" TextWrapping="Wrap" Text="Senha: " VerticalAlignment="Top" Width="62"/>
+        <PasswordBox  x:Name="txtConfirmaSenha" HorizontalAlignment="Left" Margin="69,116,0,0" VerticalAlignment="Top" Width="203" Height="22"/>
+        <TextBlock  HorizontalAlignment="Left" TextAlignment="Left" Margin="10,110,0,0" TextWrapping="Wrap" Text="Confirmar Senha: " VerticalAlignment="Top" Width="62"/>
     </Grid>
 </Window>
