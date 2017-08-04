@@ -38,18 +38,30 @@ namespace ControladorDePedidos.WPF
             var usuario = (Usuario)this.DataContext;
             var repositorio = new RepositorioUsuario();
 
-            if(txtSenha.Password != txtConfirmaSenha.Password)
+            if (usuario.Codigo == 0)
             {
-                MessageBox.Show("As senhas devem ser iguais");
-                return;
+
+
+
+                if (txtSenha.Password != txtConfirmaSenha.Password)
+                {
+                    MessageBox.Show("As senhas devem ser iguais");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(txtConfirmaSenha.Password) || string.IsNullOrEmpty(txtSenha.Password))
+                {
+                    MessageBox.Show("As senhas devem ser informada");
+                    return;
+                }
+
+                
             }
 
-            if (string.IsNullOrEmpty(txtConfirmaSenha.Password) || string.IsNullOrEmpty(txtSenha.Password))
+           if(usuario.Codigo == 0 || !string.IsNullOrEmpty(txtSenha.Password))
             {
-                MessageBox.Show("As senhas devem ser informada");
-                return;
+                usuario.Senha = txtSenha.Password;
             }
-            usuario.Senha = txtSenha.Password;
 
             if (usuario.Codigo == 0)
             {

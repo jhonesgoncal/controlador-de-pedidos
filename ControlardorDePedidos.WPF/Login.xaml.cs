@@ -41,10 +41,17 @@ namespace ControladorDePedidos.WPF
             var repositorioUsuario = new RepositorioUsuario();
             if (repositorioUsuario.ValideAcesso(usuario.Codigo, senha))
             {
-                this.Hide();
-                var formPrincipal = new MainWindow(usuario);
-                formPrincipal.ShowDialog();
-                this.Close();
+                var listaDeUsuarios = (List<Usuario>)cmbUsuarios.DataContext;
+                var quantidade = listaDeUsuarios.Where(x => x.Administrador).Count();
+                if (quantidade == 0)
+                {
+                    MessageBox.Show("Não existe administrador cadastrado no sistema, logo este usuario terá permissões de administrador.");
+                    usuario.Administrador = true;
+                }
+                    this.Hide();
+                    var formPrincipal = new MainWindow(usuario);
+                    formPrincipal.ShowDialog();
+                    this.Close();
             }
             else
             {
@@ -56,7 +63,20 @@ namespace ControladorDePedidos.WPF
         {
            
             var respositorioUsuario = new RepositorioUsuario();
-            cmbUsuarios.DataContext = respositorioUsuario.Liste();
+            var listaDeUsuarios = respositorioUsuario.Liste();
+            if(listaDeUsuarios.Count == 0)
+            {
+                var usuario = new Usuario
+                {
+                    Administrador = true
+                };
+               
+                this.Hide();
+                var formPrincipal = new MainWindow(usuario);
+                formPrincipal.ShowDialog();
+                this.Close();
+            }
+            cmbUsuarios.DataContext = listaDeUsuarios;
         }
 
         private void cmbUsuarios_SelectionChanged(object sender, SelectionChangedEventArgs e)
