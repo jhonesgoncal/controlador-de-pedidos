@@ -28,7 +28,7 @@ namespace ControladorDePedidos.Repositorio
             var FornecedorOriginal = contexto.Set<Fornecedor>().Find(produto.Fornecedor.Codigo);
             var original = contexto.Set<Produto>().Find(produto.Codigo);
             original.Marca = MarcaOriginal;
-            produto.Fornecedor = FornecedorOriginal;
+            original.Fornecedor = FornecedorOriginal;
             contexto.Entry(original).CurrentValues.SetValues(produto);
             contexto.SaveChanges();
         }

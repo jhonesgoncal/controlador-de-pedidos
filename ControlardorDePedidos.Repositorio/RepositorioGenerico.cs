@@ -47,7 +47,7 @@ namespace ControladorDePedidos.Repositorio
                 contexto.Set<T>().Remove(original);
                 contexto.SaveChanges();
             }
-            catch(DbUpdateException )
+            catch(DbUpdateException ex)
             {
                 MessageBox.Show("Não é possivel exluir esse elemento, pois ele possi itens associados.");
             }
