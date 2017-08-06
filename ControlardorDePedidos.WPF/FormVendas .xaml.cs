@@ -8,11 +8,22 @@ namespace ControladorDePedidos.WPF
 {
     public partial class FormVendas : Window
     {
+        public Cliente Cliente { get; set; }
         private RepositorioVenda repositorio;
         public FormVendas()
         {
             repositorio = new RepositorioVenda();
             InitializeComponent();
+
+        }
+
+        public FormVendas(Cliente cliente)
+        {
+            InitializeComponent();
+            this.Cliente = cliente;
+            this.Title = "Pedidos do cliente " + cliente.Nome;
+            repositorio = new RepositorioVenda();
+            
 
         }
 
@@ -28,7 +39,15 @@ namespace ControladorDePedidos.WPF
         }
         private void CarregueElementosDoBancoDeDados()
         {
-            lstVendas.DataContext = repositorio.Liste();
+            if(this.Cliente == null)
+            {
+                lstVendas.DataContext = repositorio.Liste();
+            }
+            else
+            {
+                lstVendas.DataContext = repositorio.ListePorCliente(Cliente.Codigo);
+            }
+            
         }
 
         private void btnNovo_Click(object sender, RoutedEventArgs e)
@@ -65,13 +84,6 @@ namespace ControladorDePedidos.WPF
             CarregueElementosDoBancoDeDados();
 
         }
-
-        private void btnNovo_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-       
 
         private void btnVender_Click(object sender, RoutedEventArgs e)
         {

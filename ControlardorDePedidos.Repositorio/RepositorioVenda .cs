@@ -1,5 +1,7 @@
 ﻿using ControladorDePedidos.Model;
+using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
+using System.Linq;
 using System.Windows;
 
 namespace ControladorDePedidos.Repositorio
@@ -15,6 +17,12 @@ namespace ControladorDePedidos.Repositorio
             }
                 
             base.Adicione(item);
+        }
+
+        public List<Venda> ListePorCliente(int codigoDoCliente)
+        {
+            contexto = new Contexto();
+            return contexto.Set<Venda>().Where(x => x.Cliente.Codigo == codigoDoCliente).ToList();
         }
 
         public override void Atualize(Venda item)
@@ -44,5 +52,7 @@ namespace ControladorDePedidos.Repositorio
                 MessageBox.Show("Não é possivel exluir esse elemento, pois ele possi itens associados.");
             }
         }
+
+         
     }
 }

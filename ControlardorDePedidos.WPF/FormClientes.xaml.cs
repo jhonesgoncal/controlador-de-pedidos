@@ -68,5 +68,19 @@ namespace ControladorDePedidos.WPF
             CarregueElementosDoBancoDeDados();
         }
 
+        private void btnPedidos_Click(object sender, RoutedEventArgs e)
+        {
+            if (lstClientes.SelectedItem == null)
+            {
+                MessageBox.Show("Selecione um item na lista");
+            }
+            else
+            {
+                var itemSelecionado = (Cliente)lstClientes.SelectedItem;
+                var FormVendas = new FormVendas(itemSelecionado);
+                FormVendas.ShowDialog();
+                
+            }
+        }
     }
 }

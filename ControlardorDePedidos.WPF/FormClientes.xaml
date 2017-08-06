@@ -49,6 +49,15 @@
             Padding="3"
             FontSize="12" Margin="223,5,0,0" Click="btnAtualizar_Click"
         />
+        <Controls:dn32ImageButton x:Name="btnPedidos"
+            Style="{DynamicResource dn32ButtonStyle}" 
+            Text="Pedidos"
+            NormalImage="/dn32Layout;component/img/compras.png"
+           ImageSize="32"
+            Padding="3"
+            FontSize="12"
+            HorizontalAlignment="Right" VerticalAlignment="Top" Height="62" Width="66" Margin="0,5,10,0" Click="btnPedidos_Click"
+        />
         <ListView Name="lstClientes" SelectionMode="Single" ItemsSource="{Binding}" Margin="10,86,10,10">
             <ListView.View>
                 <GridView>
@@ -59,5 +68,6 @@
                 </GridView>
             </ListView.View>
         </ListView>
+
     </Grid>
 </Window>
