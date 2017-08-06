@@ -9,7 +9,9 @@ namespace ControladorDePedidos.Model
         public DateTime DataDeCadastro { get; set; }
         public DateTime DataDeEfetivacao { get; set; }
         public DateTime DataDoRecebimento { get; set; }
-        public Cliente Cliente { get; set; }
+        public virtual List<ItemDaVenda> ItensDaVenda { get; set; }
+        public eStatusDaVenda Status { get; set; }
+        public virtual Cliente Cliente { get; set; }
         [NotMapped]
         public int QuantidadeDeProdutos
         {
@@ -23,8 +25,6 @@ namespace ControladorDePedidos.Model
                 return quantidade;
             }
         }
-        public virtual List<ItemDaVenda> ItensDaVenda { get; set; }
-        public eStatusDaVenda Status { get; set; }
         [NotMapped]
         public decimal ValorTotal {
             get

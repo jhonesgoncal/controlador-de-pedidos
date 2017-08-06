@@ -10,8 +10,10 @@ namespace ControladorDePedidos.Repositorio
         {
             var vendaOriginal = contexto.Set<Venda>().Find(itemDaVenda.Venda.Codigo);
             itemDaVenda.Venda = vendaOriginal;
+
             var produtoOriginal = contexto.Set<Produto>().Find(itemDaVenda.Produto.Codigo);
             itemDaVenda.Produto = produtoOriginal;
+
             contexto.Set<ItemDaVenda>().Add(itemDaVenda);
             contexto.SaveChanges();
         }

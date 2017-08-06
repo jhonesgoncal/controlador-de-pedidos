@@ -40,6 +40,11 @@ namespace ControladorDePedidos.WPF
             lstProdutos.DataContext = venda.ItensDaVenda;
             Codigo = venda.Codigo;
             Venda = venda;
+            if(Venda.Cliente != null)
+            {
+                txtCliente.Text = Venda.Cliente.Nome;
+            }
+            
         }
 
         private void btnSalvar_Click(object sender, RoutedEventArgs e)
@@ -117,8 +122,21 @@ namespace ControladorDePedidos.WPF
             lstProdutos.DataContext = repositorioItemDaVenda.Liste(Codigo);
         }
 
-       
-
-    
+        private void btnCliente_Click(object sender, RoutedEventArgs e)
+        {
+            if (Venda.Status != eStatusDaVenda.NOVA)
+            {
+                MessageBox.Show("Não é possivel selecionar um cliente para uma venda efetivada!");
+                return;
+            }
+            var buscaDecliente = new FormBuscaDeCliente();
+            buscaDecliente.ShowDialog();
+            Venda.Cliente = buscaDecliente.ClienteSelecionado;
+            if (Venda.Cliente != null)
+            {
+                txtCliente.Text = Venda.Cliente.Nome;
+            }
+            repositorio.Atualize(Venda);
+        }
     }
 }

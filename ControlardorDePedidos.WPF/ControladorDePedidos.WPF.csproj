@@ -64,6 +64,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="FormBuscaDeCliente.xaml.cs">
+      <DependentUpon>FormBuscaDeCliente.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FormCadastroDeFornecedor.xaml.cs">
       <DependentUpon>FormCadastroDeFornecedor.xaml</DependentUpon>
     </Compile>
@@ -74,6 +77,10 @@
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utilitarios.cs" />
+    <Page Include="FormBuscaDeCliente.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="FormBuscaDeProduto.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -220,6 +227,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="img\selecionar.png" />
     <Resource Include="readme.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -232,7 +240,6 @@
       <Name>ControladorDePedidos.Repositorio</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="img\adicionar.png" />
   </ItemGroup>

@@ -95,13 +95,13 @@ namespace ControladorDePedidos.WPF
             }
             //adicionar no estoque
             var itensDaCompra = obtenhaListaDeItensDaCompra(compra);
-            var repositoriioDeProduto = new RepositorioProduto();
+            var repositorioDeProduto = new RepositorioProduto();
             foreach(var item in itensDaCompra)
             {
                 var produtoDacompra = item.Produto;
-                var produtoBanco = repositoriioDeProduto.Consultar(produtoDacompra.Codigo);
+                var produtoBanco = repositorioDeProduto.Consultar(produtoDacompra.Codigo);
                 produtoBanco.QuantidadeEmEstoque += item.Quantidade;
-                repositoriioDeProduto.Atualize(produtoBanco);
+                repositorioDeProduto.Atualize(produtoBanco);
             }
 
             //ataulizar banco de daos
