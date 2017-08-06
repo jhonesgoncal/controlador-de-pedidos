@@ -1,26 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 using ControladorDePedidos.Model;
 using ControladorDePedidos.Repositorio;
 
 namespace ControladorDePedidos.WPF
 {
-    /// <summary>
-    /// Teste commit para FormCadastroDeMarca.xaml
-    /// </summary>
     public partial class FormCadastroDeMarca : Window
     {
+        public int Codigo { get; set; }
         public FormCadastroDeMarca()
         {
             InitializeComponent();
@@ -29,16 +15,16 @@ namespace ControladorDePedidos.WPF
         public FormCadastroDeMarca(Marca marca)
         {
             InitializeComponent();
-            txtCodigo.Text = marca.Codigo.ToString();
+            Codigo = marca.Codigo;
             txtNome.Text = marca.Nome;
         }
 
         private void btnSalvar_Click(object sender, RoutedEventArgs e)
         {
-            var codigo = txtCodigo.Text;
+            var codigo = Codigo;
             var nome = txtNome.Text;
             var repositorio = new RepositorioMarca();
-            if (codigo == "")
+            if (codigo == 0)
             {
                 //Novo Cadastro
                 var marca = new Marca
@@ -53,7 +39,7 @@ namespace ControladorDePedidos.WPF
                 //Editando Cadastro
                 var marca = new Marca
                 {
-                    Codigo = int.Parse(codigo),
+                    Codigo = codigo,
                     Nome = nome
                 };
 

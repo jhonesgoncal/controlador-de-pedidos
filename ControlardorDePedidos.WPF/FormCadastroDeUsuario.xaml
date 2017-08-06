@@ -6,28 +6,25 @@
         xmlns:local="clr-namespace:ControladorDePedidos.WPF"
         xmlns:controls="clr-namespace:dn32ImageButton.Controls;assembly=dn32Layout"
         mc:Ignorable="d"
-        Title="Cadastro de Usuario" Height="428.617" Width="299.564"
+        Title="Cadastro de Usuario" Height="266.617" Width="521.564"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
     <Window.Resources>
         <ResourceDictionary Source="/dn32Layout;component/Themes/dn32ImageButton.xaml"></ResourceDictionary>
     </Window.Resources>
     <Grid>
-        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,19,0,0" TextWrapping="Wrap" Text="Codigo: " VerticalAlignment="Top"/>
-        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,57,0,0" TextWrapping="Wrap" Text="Nome: " VerticalAlignment="Top"/>
-        <TextBox Name="txtCodigo" Text="{Binding Codigo}"  IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="69,12,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="203"/>
-        <TextBox Name="txtNome" Text="{Binding Nome}" HorizontalAlignment="Left" Height="23" Margin="69,50,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="203"/>
+        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,44,0,0" TextWrapping="Wrap" Text="Nome: " VerticalAlignment="Top"/>
+        <TextBox Name="txtNome" Text="{Binding Nome}" HorizontalAlignment="Left" Height="23" Margin="69,37,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="203"/>
         <controls:dn32ImageButton x:Name="btnSalvar"
             Style="{DynamicResource dn32ButtonStyle}" 
             Text="Salvar"
-            NormalImage="/dn32Layout;component/img/salvar.png"
-            HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="62" Width="66" 
+            NormalImage="/dn32Layout;component/img/salvar.png" VerticalAlignment="Bottom" Height="62" 
             ImageSize="32"
             Padding="3"
             FontSize="12"
-            Margin="206,0,0,11" RenderTransformOrigin="0.53,0.468" Click="btnSalvar_Click" 
+            Margin="0,0,10,10" RenderTransformOrigin="0.53,0.468" Click="btnSalvar_Click" HorizontalAlignment="Right" Width="66" 
         />
-        <GroupBox Header="Permissoes" HorizontalAlignment="Left" Height="149" Margin="75,165,0,0" VerticalAlignment="Top" Width="203">
+        <GroupBox Header="Permissoes" Margin="304,6,9,83">
             <Grid>
                 <CheckBox IsChecked="{Binding Administrador}"  Content="Administrador" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top"/>
                 <CheckBox IsChecked="{Binding Clientes}" Content="Clientes" HorizontalAlignment="Left" Margin="10,22,0,0" VerticalAlignment="Top"/>
@@ -39,9 +36,9 @@
             </Grid>
 
         </GroupBox>
-        <PasswordBox x:Name="txtSenha"  HorizontalAlignment="Left" Margin="69,83,0,0" VerticalAlignment="Top" Width="203" Height="22"/>
-        <TextBlock  HorizontalAlignment="Left" TextAlignment="Left" Margin="10,89,0,0" TextWrapping="Wrap" Text="Senha: " VerticalAlignment="Top" Width="62"/>
-        <PasswordBox  x:Name="txtConfirmaSenha" HorizontalAlignment="Left" Margin="69,116,0,0" VerticalAlignment="Top" Width="203" Height="22"/>
-        <TextBlock  HorizontalAlignment="Left" TextAlignment="Left" Margin="10,110,0,0" TextWrapping="Wrap" Text="Confirmar Senha: " VerticalAlignment="Top" Width="62"/>
+        <PasswordBox x:Name="txtSenha"  HorizontalAlignment="Left" Margin="69,70,0,0" VerticalAlignment="Top" Width="203" Height="22"/>
+        <TextBlock  HorizontalAlignment="Left" TextAlignment="Left" Margin="10,76,0,0" TextWrapping="Wrap" Text="Senha: " VerticalAlignment="Top" Width="62"/>
+        <PasswordBox  x:Name="txtConfirmaSenha" HorizontalAlignment="Left" Margin="69,103,0,0" VerticalAlignment="Top" Width="203" Height="22"/>
+        <TextBlock  HorizontalAlignment="Left" TextAlignment="Left" Margin="10,97,0,0" TextWrapping="Wrap" Text="Confirmar Senha: " VerticalAlignment="Top" Width="62"/>
     </Grid>
 </Window>

@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:ControladorDePedidos.WPF"
         Loaded="FormClientes_OnLoaded"
         mc:Ignorable="d"
-        Title="Clientes" Height="614.662" Width="906.234" WindowStartupLocation="CenterScreen">
+        Title="Clientes" Height="614.662" Width="826.234" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <ResourceDictionary Source="/dn32Layout;component/Themes/dn32ImageButton.xaml"></ResourceDictionary>
     </Window.Resources>
@@ -52,7 +52,6 @@
         <ListView Name="lstClientes" SelectionMode="Single" ItemsSource="{Binding}" Margin="10,86,10,10">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Codigo" Width="90" DisplayMemberBinding="{Binding Codigo}"/>
                     <GridViewColumn Header="Nome" Width="334" DisplayMemberBinding="{Binding Nome}"/>
                     <GridViewColumn Header="Endereço" Width="300" DisplayMemberBinding="{Binding Endereco}"/>
                     <GridViewColumn Header="Telefone" Width="130" DisplayMemberBinding="{Binding Telefone}"/>

@@ -1,12 +1,7 @@
 ﻿using ControladorDePedidos.Model;
-using ControladorDePedidos.Repositorio;
-using System;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace ControladorDePedidos.Repositorio
@@ -39,7 +34,7 @@ namespace ControladorDePedidos.Repositorio
             return lista;
         }
 
-        public void Excluir(T item)
+        public virtual void Excluir(T item)
         {
             try
             {

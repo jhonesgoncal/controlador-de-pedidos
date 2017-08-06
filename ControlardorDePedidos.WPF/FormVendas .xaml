@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ControladorDePedidos.WPF"
         mc:Ignorable="d"
-        Title="Vendas" Height="613.662" Width="696.801" WindowStartupLocation="CenterScreen"
+        Title="Vendas" Height="613.662" Width="800.801" WindowStartupLocation="CenterScreen"
         Loaded="FormVendas_OnLoaded"
         xmlns:app="clr-namespace:ControladorDePedidos.WPF" 
         Language="pt-BR"
@@ -64,6 +64,7 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Codigo" Width="60" DisplayMemberBinding="{Binding Codigo}"/>
+                    <GridViewColumn Header="Cliente" Width="100" DisplayMemberBinding="{Binding cliente}"/>
                     <GridViewColumn Header="Valor Total" Width="110" DisplayMemberBinding="{Binding ValorTotal, StringFormat='{}{0:C}'}"/>
                     <GridViewColumn Header="Quantidade de produtos" Width="140" DisplayMemberBinding="{Binding QuantidadeDeProdutos}"/>
                     <GridViewColumn Header="Data da Venda" Width="110" DisplayMemberBinding="{Binding Path=DataDeEfetivacao, Converter={StaticResource ConversorDeData}}"/>

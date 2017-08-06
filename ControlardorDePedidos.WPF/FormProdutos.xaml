@@ -71,9 +71,8 @@
         <ListView Name="lstProdutos" SelectionMode="Single" ItemsSource="{Binding}" Margin="10,86,10,10">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Codigo" Width="50" DisplayMemberBinding="{Binding Codigo}"/>
-                    <GridViewColumn Header="Nome" Width="250" DisplayMemberBinding="{Binding Nome}"/>
-                    <GridViewColumn Header="Marca" Width="70" DisplayMemberBinding="{Binding Marca.Nome}"/>
+                    <GridViewColumn Header="Nome" Width="260" DisplayMemberBinding="{Binding Nome}"/>
+                    <GridViewColumn Header="Marca" Width="100" DisplayMemberBinding="{Binding Marca.Nome}"/>
                     <GridViewColumn Header="Valor de Compra" Width="110" DisplayMemberBinding="{Binding ValorDeCompra, StringFormat='{}{0:C}'}"/>
                     <GridViewColumn Header="Valor de Venda" Width="110" DisplayMemberBinding="{Binding ValorDeVenda, StringFormat='{}{0:C}'}"/>
                     <GridViewColumn Header="Estoque" Width="100" >

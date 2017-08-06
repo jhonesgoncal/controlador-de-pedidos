@@ -6,31 +6,28 @@
         xmlns:local="clr-namespace:ControladorDePedidos.WPF"
         xmlns:controls="clr-namespace:dn32ImageButton.Controls;assembly=dn32Layout"
         mc:Ignorable="d"
-        Title="Cadastro de Cliente" Height="260.5" Width="298"
+        Title="Cadastro de Cliente" Height="220.969" Width="288.877"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
     <Window.Resources>
         <ResourceDictionary Source="/dn32Layout;component/Themes/dn32ImageButton.xaml"></ResourceDictionary>
     </Window.Resources>
     <Grid>
-        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,19,0,0" TextWrapping="Wrap" Text="Codigo: " VerticalAlignment="Top"/>
-        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,57,0,0" TextWrapping="Wrap" Text="Nome: " VerticalAlignment="Top"/>
-        <TextBox Name="txtCodigo" Text="{Binding Codigo}"  IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="69,12,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="203"/>
-        <TextBox Name="txtNome" Text="{Binding Nome}" HorizontalAlignment="Left" Height="23" Margin="69,50,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="203"/>
+        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="9,17,0,0" TextWrapping="Wrap" Text="Nome: " VerticalAlignment="Top"/>
+        <TextBox Name="txtNome" Text="{Binding Nome}" Height="23" Margin="68,10,12,0" TextWrapping="Wrap"  VerticalAlignment="Top"/>
         <controls:dn32ImageButton x:Name="btnSalvar"
             Style="{DynamicResource dn32ButtonStyle}" 
             Text="Salvar"
-            NormalImage="/dn32Layout;component/img/salvar.png"
-            HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="62" Width="66" 
+            NormalImage="/dn32Layout;component/img/salvar.png" 
             ImageSize="32"
             Padding="3"
             FontSize="12"
-            Margin="205,0,0,11" RenderTransformOrigin="0.53,0.468" Click="btnSalvar_Click" 
+            Margin="0,0,12,10" RenderTransformOrigin="0.53,0.468" Click="btnSalvar_Click" HorizontalAlignment="Right" Width="66" Height="57" VerticalAlignment="Bottom" 
         />
-        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,92,0,0" TextWrapping="Wrap" Text="Endereço: " VerticalAlignment="Top"/>
-        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,130,0,0" TextWrapping="Wrap" Text="Telefone: " VerticalAlignment="Top"/>
-        <TextBox x:Name="txtEndereco" Text="{Binding Endereco}"   HorizontalAlignment="Left" Height="23" Margin="69,85,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="203"/>
-        <TextBox x:Name="txtTelefone" Text="{Binding Telefone}" HorizontalAlignment="Left" Height="23" Margin="69,123,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="203"/>
+        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="9,52,0,0" TextWrapping="Wrap" Text="Endereço: " VerticalAlignment="Top"/>
+        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="9,90,0,0" TextWrapping="Wrap" Text="Telefone: " VerticalAlignment="Top"/>
+        <TextBox x:Name="txtEndereco" Text="{Binding Endereco}" Height="23" Margin="68,45,12,0" TextWrapping="Wrap"  VerticalAlignment="Top"/>
+        <TextBox x:Name="txtTelefone" Text="{Binding Telefone}" Margin="68,83,12,0" TextWrapping="Wrap" Height="23" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

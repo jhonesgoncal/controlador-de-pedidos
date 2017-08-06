@@ -2,25 +2,12 @@
 using ControladorDePedidos.Repositorio;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
-using System.Net;
-using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using static ControladorDePedidos.WPF.Utilitarios;
 namespace ControladorDePedidos.WPF
 {
-    /// <summary>
-    /// Lógica interna para FormCompras.xaml
-    /// </summary>
     public partial class FormCompras : Window
     {
         private RepositorioCompra repositorio;
@@ -148,16 +135,17 @@ namespace ControladorDePedidos.WPF
             }
             var itensDaCompra = obtenhaListaDeItensDaCompra(compra);
             var listaAgrupada = itensDaCompra.GroupBy(x => x.Produto.Fornecedor).ToList();
-            string listaString = "Prezado, <br> Por favor enviar os seguintes produtos relacionados na lista abaixo:<br>";
+            string listaString = "Prezado, <br> Por favor enviar os seguintes produtos relacionados na lista abaixo:<br><ul>";
             foreach(var item in listaAgrupada)
             {
                 var fornecedor = item.Key;
                 var itens = item.ToList();
                 foreach(var itemDaCompra in itens)
                 {
-                    listaString += $"{itemDaCompra.Quantidade} - {itemDaCompra.Produto.Nome}  {itemDaCompra.Produto.Marca.Nome}<br>";
+                    listaString += $"<li>{itemDaCompra.Quantidade} - {itemDaCompra.Produto.Nome}  {itemDaCompra.Produto.Marca.Nome} - {string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", itemDaCompra.Produto.ValorDeCompra)}<br></li>";
                 }
                 //Enviar Email
+                listaString += "</ul>";
                 EnviarEmail(fornecedor.Email, "Solicitação de compra", listaString);
 
             }

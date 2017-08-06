@@ -6,17 +6,15 @@
         xmlns:local="clr-namespace:ControladorDePedidos.WPF"
         xmlns:controls="clr-namespace:dn32ImageButton.Controls;assembly=dn32Layout"
         mc:Ignorable="d"
-        Title="Cadastro de Marca" Height="194" Width="292"
+        Title="Cadastro de Marca" Height="150.241" Width="292"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
     <Window.Resources>
         <ResourceDictionary Source="/dn32Layout;component/Themes/dn32ImageButton.xaml"></ResourceDictionary>
     </Window.Resources>
     <Grid>
-        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,19,0,0" TextWrapping="Wrap" Text="Codigo: " VerticalAlignment="Top"/>
-        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,57,0,0" TextWrapping="Wrap" Text="Nome: " VerticalAlignment="Top"/>
-        <TextBox Name="txtCodigo" IsReadOnly="True" Height="23" Margin="69,12,14,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-        <TextBox Name="txtNome" Height="23" Margin="69,50,14,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="10,17,0,0" TextWrapping="Wrap" Text="Nome: " VerticalAlignment="Top"/>
+        <TextBox Name="txtNome" Height="23" Margin="69,10,14,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
         <controls:dn32ImageButton x:Name="btnSalvar"
             Style="{DynamicResource dn32ButtonStyle}" 
             Text="Salvar"

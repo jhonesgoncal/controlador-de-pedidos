@@ -12,11 +12,11 @@ namespace ControladorDePedidos.WPF
     {
         public static void EnviarEmail(string destinatario, string titulo, string mensagem)
         {
-            var emailDeOrigem = "jhones.goncalves@outlook.com";
+            var emailDeOrigem = "jhonesgrey@gmail.com";
             var servidorSMTP = "in-v3.mailjet.com";
             var portaSMTP = 587;
-            var usuarioSMTP = "92d927b13ec8257815dda711583f1a8a";
-            var senhaSMTP = "e2bb37d436ed3555a5fe2166959b91cb";
+            var usuarioSMTP = "4218cb97c47cc7291ebe7df7e0a339ad";
+            var senhaSMTP = "923e3631f0a1e1a1872f449c99f90872";
 
             var smtp = new SmtpClient();
             smtp.Host = servidorSMTP;

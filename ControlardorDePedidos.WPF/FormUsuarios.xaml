@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:ControladorDePedidos.WPF"
         Loaded="FormUsuarios_OnLoaded"
         mc:Ignorable="d"
-        Title="Usuarios" Height="614.662" Width="1155.576" WindowStartupLocation="CenterScreen">
+        Title="Usuarios" Height="614.662" Width="1007.576" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <ResourceDictionary Source="/dn32Layout;component/Themes/dn32ImageButton.xaml"></ResourceDictionary>
     </Window.Resources>
@@ -52,7 +52,6 @@
         <ListView Name="lstUsuarios" SelectionMode="Single" ItemsSource="{Binding}" Margin="10,86,10,10">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Codigo" Width="150" DisplayMemberBinding="{Binding Codigo}"/>
                     <GridViewColumn Header="Nome" Width="334" DisplayMemberBinding="{Binding Nome}"/>
                     <GridViewColumn Header="Administrador" Width="100" DisplayMemberBinding="{Binding Administrador}"/>
                     <GridViewColumn Header="Clientes" Width="100" DisplayMemberBinding="{Binding Clientes}"/>
