@@ -24,7 +24,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -124,7 +124,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="FormCadastroDeVenda .xaml">
+    <Page Include="FormCadastroDeVenda.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -192,8 +192,8 @@
     <Compile Include="FormCadastroDeCliente.xaml.cs">
       <DependentUpon>FormCadastroDeCliente.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FormCadastroDeVenda .xaml.cs">
-      <DependentUpon>FormCadastroDeVenda .xaml</DependentUpon>
+    <Compile Include="FormCadastroDeVenda.xaml.cs">
+      <DependentUpon>FormCadastroDeVenda.xaml</DependentUpon>
     </Compile>
     <Compile Include="FormCadastroDeCompra.xaml.cs">
       <DependentUpon>FormCadastroDeCompra.xaml</DependentUpon>
@@ -289,6 +289,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\icone.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

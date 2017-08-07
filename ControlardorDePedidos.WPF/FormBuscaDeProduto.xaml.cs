@@ -38,7 +38,7 @@ namespace ControladorDePedidos.WPF
                 MessageBox.Show("Selecione um item na lista");
                 return;
             }
-            if(txtQuantidade.Text == " " || txtQuantidade.Text == null)
+            if(txtQuantidade.Text == " " || txtQuantidade.Text == null || int.Parse(txtQuantidade.Text) == 0)
             {
                 MessageBox.Show("Informe a quantidade");
                 return;
@@ -54,6 +54,11 @@ namespace ControladorDePedidos.WPF
                 return;
             }
             ProdutoSelecionado = (Produto)lstProdutos.SelectedItem;
+            if((ProdutoSelecionado.QuantidadeEmEstoque - int.Parse(txtQuantidade.Text)) < 0)
+            {
+                MessageBox.Show("Quantidade em estoque a baixo do solicitado");
+                return;
+            }
             this.Close();
         }
     }

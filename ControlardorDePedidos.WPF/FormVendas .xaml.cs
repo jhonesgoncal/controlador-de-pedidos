@@ -105,8 +105,21 @@ namespace ControladorDePedidos.WPF
                 MessageBox.Show("Nenhum item a ser vendado nessa solicitação de venda.");
                 return;
             }
+            if(venda.Cliente == null)
+            {
+                MessageBox.Show("Precisar existir um cliente para efetivar a venda.");
+                return;
+            }
             var itensDaVenda = obtenhaListaDeItensDaVenda(venda);
-           
+            var repositorioDeProduto = new RepositorioProduto();
+            foreach (var item in itensDaVenda)
+            {
+                var produtoDaVenda = item.Produto;
+                var produtoBanco = repositorioDeProduto.Consultar(produtoDaVenda.Codigo);
+                produtoBanco.QuantidadeEmEstoque -= item.Quantidade;
+                repositorioDeProduto.Atualize(produtoBanco);
+            }
+
             //Salva no banco
             venda.Status = eStatusDaVenda.EFETIVADA;
             venda.DataDeEfetivacao = DateTime.Now;

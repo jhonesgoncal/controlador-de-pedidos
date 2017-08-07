@@ -43,7 +43,7 @@
         <controls:dn32ImageButton x:Name="btnAdicionar"
             Style="{DynamicResource dn32ButtonStyle}" 
             Text="Adicionar"
-            NormalImage="/ControladorDePedidos.WPF;component/img/adicionar.png" 
+            NormalImage="/Controlador de Pedidos;component/img/adicionar.png" 
             ImageSize="32"
             Padding="3"
             FontSize="12" Margin="0,0,10,15" HorizontalAlignment="Right" Width="76" Height="66" VerticalAlignment="Bottom" Click="btnAdicionar_Click"

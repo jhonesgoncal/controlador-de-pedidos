@@ -27,7 +27,7 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Nome" Width="250" DisplayMemberBinding="{Binding Nome}"/>
-                    <GridViewColumn Header="Endereco" Width="250" DisplayMemberBinding="{Binding Email}"/>
+                    <GridViewColumn Header="Endereco" Width="250" DisplayMemberBinding="{Binding Endereco}"/>
                     <GridViewColumn Header="Telefone" Width="120" DisplayMemberBinding="{Binding Telefone}"/>
                 </GridView>
             </ListView.View>
@@ -35,7 +35,7 @@
         <controls:dn32ImageButton x:Name="btnSelecionar"
             Style="{DynamicResource dn32ButtonStyle}" 
             Text="Selecionar"
-            NormalImage="/ControladorDePedidos.WPF;component/img/selecionar.png" 
+            NormalImage="/Controlador de Pedidos;component/img/selecionar.png" 
             ImageSize="32"
             Padding="3"
             FontSize="12" Margin="0,0,10,15" HorizontalAlignment="Right" Width="76" Height="66" VerticalAlignment="Bottom" Click="btnSelcionar_Click"

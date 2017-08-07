@@ -50,6 +50,11 @@ namespace ControladorDePedidos.WPF
         private void btnSalvar_Click(object sender, RoutedEventArgs e)
         {
             var venda = (Venda)this.DataContext;
+            if(txtCliente.Text == "")
+            {
+                MessageBox.Show("Selecione um cliente para concluir a venda.");
+                return;
+            }
             if(venda != null)
             {
                 //Editando Cadastro

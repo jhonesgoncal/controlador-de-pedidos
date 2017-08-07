@@ -7,16 +7,20 @@
         mc:Ignorable="d"
         ResizeMode="NoResize"
         Loaded="Window_Loaded"
-        Title="Autenticação" Height="137.393" Width="327.03" WindowStartupLocation="CenterScreen" >
+        Title="Autenticação" Height="334.787" Width="505.03" WindowStartupLocation="CenterScreen" >
     <Window.Resources>
         <ResourceDictionary Source="/dn32Layout;component/Themes/dn32ImageButton.xaml"></ResourceDictionary>
     </Window.Resources>
 
     <Grid>
-        <TextBlock  HorizontalAlignment="Left" TextAlignment="Left" Margin="16,15,0,0" TextWrapping="Wrap" Text="Usuário: " VerticalAlignment="Top" Width="85"/>
-        <ComboBox x:Name="cmbUsuarios" Margin="106,9,12,0" VerticalAlignment="Top" ItemsSource="{Binding}" SelectedValuePath="Codigo" DisplayMemberPath="Nome" SelectionChanged="cmbUsuarios_SelectionChanged"/>
-        <PasswordBox Name="txtSenha" Margin="106,36,12,0" Height="22" VerticalAlignment="Top"/>
-        <TextBlock  HorizontalAlignment="Left" TextAlignment="Left" Margin="16,42,0,0" TextWrapping="Wrap" Text="Senha: " VerticalAlignment="Top" Width="69"/>
-        <Button Content="Entrar" Name="btnEntrar" Margin="0,0,12,15" Click="btnEntrar_Click" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="76"/>
+        <Image   />
+        <TextBlock TextAlignment="Left" Margin="10,214,399,0" TextWrapping="Wrap" Text="Usuário: " Height="16" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cmbUsuarios" Margin="100,208,18,0" ItemsSource="{Binding}" SelectedValuePath="Codigo" DisplayMemberPath="Nome" SelectionChanged="cmbUsuarios_SelectionChanged" Height="22" VerticalAlignment="Top"/>
+        <PasswordBox Name="txtSenha" Margin="100,235,18,0" Height="22" VerticalAlignment="Top"/>
+        <TextBlock TextAlignment="Left" Margin="10,241,399,0" TextWrapping="Wrap" Text="Senha: " Height="16" VerticalAlignment="Top"/>
+        <Button Content="Entrar" Name="btnEntrar" Margin="0,0,18,10" Click="btnEntrar_Click" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="76" Background="#FFF0890E" Foreground="#FFF5EBEB"/>
+        <Image Height="138" Margin="0,54,0,0" VerticalAlignment="Top" Source="/Controlador de Pedidos;component/img/icone.png"/>
+        <TextBlock HorizontalAlignment="Center" Margin="10,10,0,0" TextWrapping="Wrap" Text="Controlador de Pedidos" VerticalAlignment="Top" Height="39" Width="471" FontFamily="Arial Black" FontSize="36" FontWeight="Bold"/>
+
     </Grid>
 </Window>
