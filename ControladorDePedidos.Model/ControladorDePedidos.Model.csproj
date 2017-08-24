@@ -43,9 +43,12 @@
   <ItemGroup>
     <Compile Include="ClasseBase.cs" />
     <Compile Include="Cliente.cs" />
+    <Compile Include="Divida.cs" />
+    <Compile Include="eStatusDaDivida.cs" />
     <Compile Include="eStatusDaVenda .cs" />
     <Compile Include="ItemDaVenda.cs" />
     <Compile Include="Fornecedor.cs" />
+    <Compile Include="Financeiro.cs" />
     <Compile Include="Venda .cs" />
     <Compile Include="Compra.cs" />
     <Compile Include="eStatusDaCompra.cs" />

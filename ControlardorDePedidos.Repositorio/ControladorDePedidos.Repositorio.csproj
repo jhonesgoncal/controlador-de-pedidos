@@ -73,12 +73,26 @@
     <Compile Include="Migrations\201708061557497_cliente-na-venda.Designer.cs">
       <DependentUpon>201708061557497_cliente-na-venda.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708092341411_alteracao-usuario.cs" />
+    <Compile Include="Migrations\201708092341411_alteracao-usuario.Designer.cs">
+      <DependentUpon>201708092341411_alteracao-usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708112336256_divida.cs" />
+    <Compile Include="Migrations\201708112336256_divida.Designer.cs">
+      <DependentUpon>201708112336256_divida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708232341175_financeiro.cs" />
+    <Compile Include="Migrations\201708232341175_financeiro.Designer.cs">
+      <DependentUpon>201708232341175_financeiro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositorioCliente .cs" />
+    <Compile Include="RepositorioDivida.cs" />
     <Compile Include="RepositorioGenerico.cs" />
     <Compile Include="RepositorioItemDaVenda .cs" />
     <Compile Include="RepositorioFornecedor .cs" />
+    <Compile Include="RepositorioFinanceiro.cs" />
     <Compile Include="RepositorioVenda .cs" />
     <Compile Include="RepositorioItemDaCompra.cs" />
     <Compile Include="RepositorioCompra .cs" />
@@ -114,6 +128,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708061557497_cliente-na-venda.resx">
       <DependentUpon>201708061557497_cliente-na-venda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708092341411_alteracao-usuario.resx">
+      <DependentUpon>201708092341411_alteracao-usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708112336256_divida.resx">
+      <DependentUpon>201708112336256_divida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708232341175_financeiro.resx">
+      <DependentUpon>201708232341175_financeiro.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

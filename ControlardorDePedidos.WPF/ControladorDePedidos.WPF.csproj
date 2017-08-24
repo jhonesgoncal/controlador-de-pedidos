@@ -77,6 +77,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -86,9 +88,11 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -100,6 +104,15 @@
     </Compile>
     <Compile Include="FormCadastroDeFornecedor.xaml.cs">
       <DependentUpon>FormCadastroDeFornecedor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadastroDeDivida.xaml.cs">
+      <DependentUpon>FormCadastroDeDivida.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormDividas.xaml.cs">
+      <DependentUpon>FormDividas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormFinanceiro.xaml.cs">
+      <DependentUpon>FormFinanceiro.xaml</DependentUpon>
     </Compile>
     <Compile Include="FormFornecedores.xaml.cs">
       <DependentUpon>FormFornecedores.xaml</DependentUpon>
@@ -121,6 +134,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FormCadastroDeFornecedor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FormCadastroDeDivida.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -147,6 +164,14 @@
     <Page Include="FormClientes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormDividas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FormFinanceiro.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="FormFornecedores.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -292,6 +317,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\icone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\financeiro.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

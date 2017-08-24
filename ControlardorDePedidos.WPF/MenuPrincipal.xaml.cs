@@ -77,5 +77,16 @@ namespace ControladorDePedidos.WPF
             var janelaFornecedores = new FormFornecedores();
             janelaFornecedores.Show();
         }
+
+        private void btnFinanceiro_Click(object sender, RoutedEventArgs e)
+        {
+            if (!Usuario.Administrador && !Usuario.Financeiro)
+            {
+                MessageBox.Show("Acesso negado!");
+                return;
+            }
+            var janelaFinanceiro = new FormFinanceiro();
+            janelaFinanceiro.Show();
+        }
     }
 }

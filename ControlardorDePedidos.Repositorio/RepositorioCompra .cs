@@ -1,5 +1,6 @@
 ﻿using ControladorDePedidos.Model;
 using System.Data.Entity.Infrastructure;
+using System.Linq;
 using System.Windows;
 
 namespace ControladorDePedidos.Repositorio
@@ -19,6 +20,11 @@ namespace ControladorDePedidos.Repositorio
             {
                 MessageBox.Show("Não é possivel exluir esse elemento, pois ele possi itens associados.");
             }
+        }
+
+        public decimal TotalDeCompras()
+        {
+            return contexto.Set<Compra>().Sum(x => x.ValorTotal) ;
         }
     }
 }

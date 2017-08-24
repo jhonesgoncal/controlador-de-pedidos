@@ -1,0 +1,62 @@
+﻿<Window xmlns:Controls="clr-namespace:dn32ImageButton.Controls;assembly=dn32Layout" 
+        x:Class="ControladorDePedidos.WPF.FormFinanceiro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ControladorDePedidos.WPF"
+        Loaded="FormFinanceiro_OnLoaded"
+        mc:Ignorable="d"
+        Title="Financeiro" Height="273.662" Width="364.801" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ResourceDictionary Source="/dn32Layout;component/Themes/dn32ImageButton.xaml"></ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Controls:dn32ImageButton x:Name="btnDividas"
+            Style="{DynamicResource dn32ButtonStyle}" 
+            Text="Dividas"
+            NormalImage="/dn32Layout;component/img/novo.png"
+            HorizontalAlignment="Left" VerticalAlignment="Top" Height="62" Width="66" 
+            ImageSize="32"
+            Padding="3"
+            FontSize="12"
+            Margin="10,5,0,0" Click="btnDividas_Click"
+        />
+        <Controls:dn32ImageButton x:Name="btnCompras"
+            Style="{DynamicResource dn32ButtonStyle}" 
+            Text="Compras"
+            NormalImage="/dn32Layout;component/img/compras.png"
+            HorizontalAlignment="Left" VerticalAlignment="Top"  Height="62" Width="66" 
+            ImageSize="32"
+            Padding="3"
+            FontSize="12" Margin="81,5,0,0" Click="btnCompras_Click"
+        />
+        <Controls:dn32ImageButton x:Name="btnVendas"
+            Style="{DynamicResource dn32ButtonStyle}" 
+            Text="Vendas"
+            NormalImage="/dn32Layout;component/img/vendas.png"
+            HorizontalAlignment="Left" VerticalAlignment="Top" Height="62" Width="66" 
+            ImageSize="32"
+            Padding="3"
+            FontSize="12" Margin="152,5,0,0" Click="btnVendas_Click"
+        />
+        <Controls:dn32ImageButton x:Name="btnDeposito"
+            Style="{DynamicResource dn32ButtonStyle}" 
+            Text="Depositar"
+            NormalImage="/Controlador de Pedidos;component/img/financeiro.png" VerticalAlignment="Top" Height="62" 
+            ImageSize="32"
+            Padding="3"
+            FontSize="12" Margin="0,5,14,0" Click="btnDeposito_Click" HorizontalAlignment="Right" Width="66"
+        />
+        <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="9,101,0,0" TextWrapping="Wrap" Text="Valor para Deposito: " VerticalAlignment="Top"/>
+        <TextBox x:Name="txtDeposito"  Margin="125,94,14,0" TextWrapping="Wrap" Height="23" VerticalAlignment="Top"/>
+        <TextBlock  HorizontalAlignment="Left" IsEnabled="False"  TextAlignment="Right" Margin="9,129,0,0" TextWrapping="Wrap" Text="Total em Compras: " VerticalAlignment="Top"/>
+        <TextBox x:Name="txtCompras"  Margin="125,122,14,0" TextWrapping="Wrap" Height="23" VerticalAlignment="Top" Text="{Binding TotalCompras}"/>
+        <TextBlock  HorizontalAlignment="Left" IsEnabled="False"  TextAlignment="Right" Margin="9,157,0,0" TextWrapping="Wrap" Text="Total em Vendas: " VerticalAlignment="Top"/>
+        <TextBox x:Name="txtVendas"  Margin="125,150,14,0" TextWrapping="Wrap" Height="23" VerticalAlignment="Top"/>
+        <TextBlock  HorizontalAlignment="Left" IsEnabled="False"  TextAlignment="Right" Margin="9,185,0,0" TextWrapping="Wrap" Text="Total de Dividas: " VerticalAlignment="Top"/>
+        <TextBox x:Name="txtDividas"  Margin="125,178,14,0" TextWrapping="Wrap" Height="23" VerticalAlignment="Top"/>
+        <TextBlock  HorizontalAlignment="Left" IsEnabled="False"  TextAlignment="Right" Margin="9,213,0,0" TextWrapping="Wrap" Text="Saldo: " VerticalAlignment="Top"/>
+        <TextBox x:Name="txtSaldo"  Margin="125,206,14,0" TextWrapping="Wrap" Height="23" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
