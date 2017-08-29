@@ -53,10 +53,7 @@ namespace ControladorDePedidos.Repositorio
             }
         }
 
-        public decimal TotalDeVendas()
-        {
-            return contexto.Set<Venda>().Sum(x => x.ValorTotal);
-        }
+       
 
 
     }

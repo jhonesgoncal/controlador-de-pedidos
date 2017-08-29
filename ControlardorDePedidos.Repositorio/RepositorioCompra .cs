@@ -22,9 +22,6 @@ namespace ControladorDePedidos.Repositorio
             }
         }
 
-        public decimal TotalDeCompras()
-        {
-            return contexto.Set<Compra>().Sum(x => x.ValorTotal) ;
-        }
+        
     }
 }

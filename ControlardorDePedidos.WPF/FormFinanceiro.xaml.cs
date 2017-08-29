@@ -2,6 +2,8 @@
 using ControladorDePedidos.Model;
 using ControladorDePedidos.Repositorio;
 using System;
+using System.Drawing;
+using System.Globalization;
 
 namespace ControladorDePedidos.WPF
 {
@@ -41,16 +43,18 @@ namespace ControladorDePedidos.WPF
 
         private void CarregueElementosDoBancoDeDados()
         {
-            txtCompras.DataContext = financeiro.TotalCompras;
-            txtDividas.DataContext = financeiro.TotalDividas;
-            txtVendas.DataContext = financeiro.TotalVendas;
-            txtSaldo.DataContext = financeiro.Saldo;
+            repositorio.Atualize(financeiro);
+            txtCompras.Text = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", financeiro.TotalCompras.ToString());
+            txtDividas.Text = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", financeiro.TotalDividas.ToString());
+            txtVendas.Text = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", financeiro.TotalVendas.ToString());
+            txtSaldo.Text = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", financeiro.Saldo.ToString());
         }
 
         private void btnDeposito_Click(object sender, RoutedEventArgs e)
         {
             financeiro.Saldo = decimal.Parse(txtDeposito.Text);
             repositorio.Adicione(financeiro);
+            CarregueElementosDoBancoDeDados();
         }
     }
 }

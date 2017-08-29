@@ -51,7 +51,7 @@
         <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="9,101,0,0" TextWrapping="Wrap" Text="Valor para Deposito: " VerticalAlignment="Top"/>
         <TextBox x:Name="txtDeposito"  Margin="125,94,14,0" TextWrapping="Wrap" Height="23" VerticalAlignment="Top"/>
         <TextBlock  HorizontalAlignment="Left" IsEnabled="False"  TextAlignment="Right" Margin="9,129,0,0" TextWrapping="Wrap" Text="Total em Compras: " VerticalAlignment="Top"/>
-        <TextBox x:Name="txtCompras"  Margin="125,122,14,0" TextWrapping="Wrap" Height="23" VerticalAlignment="Top" Text="{Binding TotalCompras}"/>
+        <TextBox x:Name="txtCompras"  Margin="125,122,14,0" TextWrapping="Wrap" Height="23" VerticalAlignment="Top" />
         <TextBlock  HorizontalAlignment="Left" IsEnabled="False"  TextAlignment="Right" Margin="9,157,0,0" TextWrapping="Wrap" Text="Total em Vendas: " VerticalAlignment="Top"/>
         <TextBox x:Name="txtVendas"  Margin="125,150,14,0" TextWrapping="Wrap" Height="23" VerticalAlignment="Top"/>
         <TextBlock  HorizontalAlignment="Left" IsEnabled="False"  TextAlignment="Right" Margin="9,185,0,0" TextWrapping="Wrap" Text="Total de Dividas: " VerticalAlignment="Top"/>

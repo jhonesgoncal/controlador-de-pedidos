@@ -25,5 +25,10 @@ namespace ControladorDePedidos.Repositorio
             var lista = contexto.Set<ItemDaVenda>().Where(x => x.Venda.Codigo == CodigoDaVenda).ToList();
             return lista;
         }
+
+        public decimal TotalDeVendas()
+        {
+            return contexto.Set<ItemDaVenda>().Sum(x => (x.Valor  * x.Quantidade));
+        }
     }
 }
